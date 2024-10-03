@@ -1,0 +1,54 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"> <!-- Define a codificação de caracteres -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+        
+        <!-- Link para o arquivo CSS -->
+        <link rel="stylesheet" href="login.css">
+
+        <title>Nova Senha</title> <!-- Título da página -->
+    </head>
+
+    <body>
+        <header>
+            <div id="titulo">
+                Portal Justificativa <br>
+                de faltas <!-- Título do portal -->
+            </div>
+        </header>
+
+        <br>
+
+        <div id="divInterior">
+            <div id="divInterior01">
+                Solicitação <br>
+                Nova Senha <!-- Mensagem de introdução para o login -->
+            </div>
+
+            <br>
+
+            <div id="divInterior02">   
+                <form>
+                    <label for="login"> Login </label><br> <!-- Rótulo para o campo de login -->
+                    <input type="text" name="login" id="login" required> <!-- Campo para inserir o login -->
+
+                    <br><br>
+
+                    <label for="new-password"> Nova Senha </label><br> <!-- Rótulo para o campo de nova senha -->
+                    <input type="password" name="new-password" id="new-password" required> <!-- Campo para inserir a nova senha -->
+
+                    <br><br>
+
+                    <label for="confirm-password"> Confirmar Nova Senha </label><br> <!-- Rótulo para o campo de confirmação da nova senha -->
+                    <input type="password" name="confirm-password" id="confirm-password" required> <!-- Campo para confirmar a nova senha -->
+
+                    <br><br>
+
+                    <input type="submit" value="Solicitar Nova Senha"> <!-- Botão para enviar o formulário -->
+                </form>
+            </div>
+
+            <br>
+        </div>
+    </body>
+</html>

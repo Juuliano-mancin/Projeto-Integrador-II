@@ -51,6 +51,10 @@ body {
     transform: translate(-50%, -50%); /* Ajusta a posição para centralizar corretamente */
 }
 
+.error {
+    border: 2px solid red; /* Contorno vermelho */
+}
+
 
 /* -- Adicionando media query para responsividade -- */
 @media (max-width: 600px) {

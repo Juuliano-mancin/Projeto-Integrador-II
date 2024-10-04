@@ -22,18 +22,13 @@
         <div id="divInterior">
             <div id="divInterior01">
                 Solicitação <br>
-                Nova Senha <!-- Mensagem de introdução para o login -->
+                Nova Senha <!-- Mensagem de introdução para a solicitação de nova senha -->
             </div>
 
             <br>
 
             <div id="divInterior02">   
                 <form>
-                    <label for="login"> Login </label><br> <!-- Rótulo para o campo de login -->
-                    <input type="text" name="login" id="login" required> <!-- Campo para inserir o login -->
-
-                    <br><br>
-
                     <label for="new-password"> Nova Senha </label><br> <!-- Rótulo para o campo de nova senha -->
                     <input type="password" name="new-password" id="new-password" required> <!-- Campo para inserir a nova senha -->
 
@@ -46,9 +41,13 @@
 
                     <input type="submit" value="Solicitar Nova Senha"> <!-- Botão para enviar o formulário -->
                 </form>
+                <div id="error-message" style="color: red;"></div> <!-- Div para exibir mensagens de erro -->
             </div>
 
             <br>
         </div>
+
+        <script src="novasenha.js"></script> <!-- Inclusão do arquivo JavaScript -->
     </body>
 </html>
+

@@ -1,0 +1,87 @@
+/* Formatação da div principal */
+.principal {
+    position: fixed;              /* Posiciona a div de forma fixa na tela */
+    top: 50%;                    /* Centraliza verticalmente */
+    left: 50%;                   /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Aplica a transformação para o centro exato */
+    padding: 20px;               /* Espaçamento interno da div */
+    border: 1px solid #000000;   /* Borda preta */
+    border-radius: 15px;         /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efeito de profundidade */
+    background-color: #ffffff;   /* Cor de fundo branca */
+    width: 550px;                /* Largura fixa da div */
+    margin-right: -80px;         /* Margem negativa à direita */
+    background-image: url(img/Efeitos_customizados/Efeito_login.png); /* Imagem de fundo */
+    background-position: right;   /* Posiciona a imagem de fundo à direita */
+    background-repeat: no-repeat; /* Não repete a imagem de fundo */
+    background-size: contain;     /* Ajusta a imagem de fundo para caber na div */
+}
+
+/* Formatação do texto de login */
+.login-text {
+    display: flex;                /* Utiliza flexbox para layout */
+    flex-direction: column;       /* Alinha os itens em coluna */
+    align-items: flex-start;      /* Alinha os itens à esquerda */
+}
+
+.titulo {
+    font-size: 32px;              /* Tamanho do texto aumentado para "Faça Login" */
+    font-weight: bold;            /* Texto em negrito */
+    margin: 0;                    /* Remove margens padrões */
+    color: black;                 /* Cor do texto preta */
+}
+
+.subtitulo {
+    font-size: 16px;              /* Tamanho menor para "para continuar" */
+    margin: 0;                    /* Remove margens padrões */
+    margin-left: 62px;            /* Indentação para alinhar com o título */
+    color: #666666;               /* Cor do texto cinza */
+}
+
+.icon {
+    width: 15px;                  /* Largura do ícone */
+    height: auto;                 /* Altura automática para manter proporção */
+    margin-right: 5px;            /* Espaço entre o ícone e o texto */
+    vertical-align: baseline;      /* Alinha o ícone verticalmente com o texto */
+}
+
+.input-container {
+    display: flex;                 /* Utiliza flexbox para layout */
+    align-items: center;          /* Alinha itens verticalmente ao centro */
+}
+
+.input-container input[type="submit"] {
+    margin-left: 10px;            /* Espaço entre o campo de senha e o botão */
+}
+
+input[type="submit"] {
+    padding: 4px 8px;             /* Paddings reduzidos para um tamanho menor */
+    text-align: center;            /* Centraliza o texto do botão */
+    display: inline-block;         /* Exibição em linha */
+    font-size: 15px;               /* Tamanho da fonte do botão */
+    font-weight: 500;              /* Negrito leve */
+    border-radius: 10px;           /* Bordas arredondadas */
+    cursor: pointer;               /* Cursor em formato de pointer ao passar o mouse */
+    background-color: #B20000;    /* Cor de fundo do botão vermelha */
+    color: #FFFFFF;                /* Cor do texto do botão branca */
+}
+
+input[type="submit"]:hover {
+    background-color: #D32719;    /* Cor ao passar o mouse no botão */
+}
+
+label {
+    font-size: 20px;               /* Aumenta levemente a fonte dos rótulos */
+}
+
+input[type="text"], input[type="password"] {
+    border: 1px solid #B0B0B0;     /* Borda mais clara */
+    border-radius: 5px;            /* Bordas arredondadas */
+    font-size: 16px;               /* Tamanho da fonte */
+    box-sizing: border-box;        /* Inclui padding e borda na largura total */
+}
+
+input::placeholder {
+    color: rgba(128, 128, 128, 0.5); /* Cor cinza com 50% de transparência para o placeholder */
+    font-style: italic;            /* Opcional: deixa o texto do placeholder em itálico */
+}

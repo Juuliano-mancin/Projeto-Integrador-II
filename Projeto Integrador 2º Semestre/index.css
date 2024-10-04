@@ -36,41 +36,41 @@ main {
 
 .imagens {
     display: flex; /* Exibe as imagens lado a lado */
-    justify-content: center; /* Centraliza as imagens */
+    justify-content: space-evenly; /* Centraliza as imagens */
     margin-bottom: 20px; /* Espaço abaixo das imagens */
 }
 
 .imagens img {
-    width: 120px; /* Tamanho harmonizado para ambos os logos */
+    width: 240px; /* Tamanho harmonizado para ambos os logos */
     height: auto; /* Mantém a proporção */
-    margin: 0 15px; /* Espaçamento entre as imagens */
+    margin: 0 100px; /* Espaçamento entre as imagens */
 }
 
 .destaque {
-    font-size: 30px; /* Tamanho da fonte para o destaque */
+    font-size: 40px; /* Tamanho da fonte para o destaque */
     font-weight: 700; /* Negrito */
     margin: 15px 0; /* Ajusta a margem */
-    color: #FF0000; /* Vermelho para o destaque */
+    color: #C72B1A; /* Vermelho para o destaque */
 }
 
 .subtitulo {
-    font-size: 24px; /* Tamanho da fonte para o subtítulo */
+    font-size: 35px; /* Tamanho da fonte para o subtítulo */
     font-weight: 400; /* Peso normal */
     margin: 10px 0; /* Ajusta a margem inferior */
     color: #343A40; /* Cinza escuro para o subtítulo */
 }
 
-.autor {
-    font-size: 20px; /* Tamanho da fonte para o autor */
+.subtitulo2 {
+    font-size: 20px; /* Tamanho da fonte para o subtitulo02 */
     font-weight: 400; /* Peso normal */
     margin-bottom: 30px; /* Margem inferior para espaçamento */
-    color: #343A40; /* Cinza escuro para o autor */
+    color: #343A40; /* Cinza escuro para o subtitulo02 */
 }
 
 .botao {
     padding: 12px 25px; /* Ajusta o espaço do botão */
     font-size: 16px; /* Ajusta o tamanho da fonte do botão */
-    background-color: #FF0000; /* Vermelho para o botão */
+    background-color: #C72B1A; /* Vermelho para o botão */
     color: white;
     border: none;
     border-radius: 5px;

@@ -44,7 +44,7 @@ Este projeto é acadêmico e, portanto, não permite contribuições externas. N
 2. David Gabriel Vicentini
 3. Juliano Mancini
 4. Moises Elias do Prado
-5. Monise Jaqueta Leite
+5. Monise Leite Jaqueta
 6. William Alex Bassi Luiz
 
 ## Licença

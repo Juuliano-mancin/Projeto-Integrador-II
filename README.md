@@ -1,4 +1,4 @@
-# Projeto Integrador
+# Projeto Integrador [Em Desenvolvimento]
 
 Um projeto acadêmico da Fatec para o curso de Desenvolvimento de Software Multiplataforma, no 2° semestre. Este projeto consiste em um portal web destinado à justificativa de faltas, utilizado por professores, funcionários administrativos e de coordenação. O projeto ainda está em desenvolvimento e em constante atualização, com previsão de término para o final de 2024.
 

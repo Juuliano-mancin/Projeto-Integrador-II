@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cadastro.css"> <!-- Link para o novo CSS -->
+    <title>Cadastro de Disciplina</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Disciplina</h1>
+    </header>
+
+    <div id="CorpoInterno">
+        <form>
+            <label for="curso">Curso:</label>
+            <select id="curso" name="curso" required>
+                <option value="">Selecione um curso</option>
+                <option value="curso1">Curso 1</option>
+                <option value="curso2">Curso 2</option>
+                <option value="curso3">Curso 3</option>
+                <!-- Adicione mais opções de cursos conforme necessário -->
+            </select>
+
+            <label for="nomeDisciplina">Nome da Disciplina:</label>
+            <input type="text" id="nomeDisciplina" name="nomeDisciplina" required>
+
+            <label for="semestre">Semestre:</label>
+            <input type="text" id="semestre" name="semestre" required>
+
+            <label for="horasAula">Horas-Aula:</label>
+            <input type="number" id="horasAula" name="horasAula" required>
+
+            <button type="submit">Cadastrar</button>
+            <button type="button" onclick="window.location.href='index.html'">Finalizar</button> <!-- Redireciona para a página inicial -->
+        </form>
+    </div>
+</body>
+</html>

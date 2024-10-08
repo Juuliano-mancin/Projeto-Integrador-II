@@ -1,0 +1,15 @@
+
+**AUTOR:** Juliano Mancini  
+**DATA:** 08 de outubro de 2024
+
+## RECURSOS PARA IMPLEMENTAR
+
+### 1. Navegação
+- **Adicionar um botão Home**: 
+  - Incluir um ícone de "Home" nas páginas dos formulários (Cadastro de Funcionário, Cadastro de Curso e Cadastro de Disciplina) que retorna para a página do administrativo (homepageAdministrativo).
+
+### 2. Validação de Dados
+- **Validação e Tratamento de Erros**: 
+  - Adicionar **placeholders** e **máscaras de entrada** para facilitar a inserção do tipo de dado.
+  - Implementar recursos visuais que alertem o usuário quando os campos estão vazios ou contêm dados inválidos.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

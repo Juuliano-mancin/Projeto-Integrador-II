@@ -1,0 +1,107 @@
+/* Estilos gerais para o corpo da página */
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #F0F0F0;
+    color: #000000;
+}
+
+/* Estilos para o cabeçalho fixo */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #E03C31; /* Vermelho CPS para o cabeçalho */
+    color: #FFFFFF;
+}
+
+/* Estilos para a div principal */
+.principal {
+    display: flex;
+    flex-direction: row; /* Alinha os elementos em linha */
+    border: 2px solid #A7A8AA;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    margin: 60px auto 0;
+    background-color: #FFFFFF; /* Fundo branco da div principal */
+}
+
+/* Estilos para os campos de cadastro */
+.cadastro {
+    flex: 1; /* Ocupa o espaço restante */
+    margin-right: 20px; /* Espaçamento à direita da div de cadastro */
+}
+
+/* Estilos para os formulários */
+form {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em coluna */
+}
+
+/* Estilos para os campos de entrada */
+input {
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #A7A8AA; /* Borda cinza */
+    border-radius: 5px; /* Borda arredondada */
+    margin-bottom: 15px; /* Espaçamento abaixo de cada campo */
+}
+
+/* Adiciona uma formatação para o botão de salvar */
+button {
+    margin-top: 20px; /* Espaçamento acima do botão */
+    padding: 10px; /* Espaçamento interno do botão */
+    border: 1px solid #000000; /* Borda preta */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #FFFFFF; /* Botão branco */
+    color: #000000; /* Texto preto */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    align-self: center; /* Centraliza o botão horizontalmente */
+}
+
+/* Adiciona um efeito ao botão ao passar o mouse */
+button:hover {
+    background-color: #E03C31; /* Muda para vermelho ao passar o mouse */
+    color: #FFFFFF; /* Texto branco ao passar o mouse */
+}
+
+/* Estilos da tabela */
+.tabela {
+    flex: 1; /* Ocupa o espaço restante */
+}
+
+/* Estilos da tabela */
+table {
+    width: 100%; /* Largura total da tabela */
+    border-collapse: collapse; /* Colapsa as bordas da tabela */
+    margin-top: 20px; /* Espaçamento acima da tabela */
+}
+
+/* Estilos para células e cabeçalhos da tabela */
+th, td {
+    border: 1px solid #A7A8AA; /* Borda cinza */
+    padding: 10px; /* Espaçamento interno das células */
+    text-align: left; /* Alinhamento do texto */
+}
+
+/* Estilos para cabeçalhos da tabela */
+th {
+    background-color: #E03C31; /* Vermelho CPS para cabeçalhos da tabela */
+    color: #FFFFFF; /* Texto branco */
+}
+
+/* Adiciona espaço abaixo do botão "Salvar Cadastro" */
+.espaco {
+    height: 20px; /* Ajuste a altura conforme necessário */
+}

@@ -81,7 +81,7 @@ Este projeto é acadêmico e, portanto, não permite contribuições externas. N
 | David Gabriel Vicentini    | Back-end                     |
 | Juliano Mancini            | Front-end, Documentação      |
 | Moises Elias do Prado      | Back-end                     |
-| Monise Leite Jaqueta       | Front-end                    |
+| Monise Leite Jacheta       | Front-end                    |
 | William Alex Bassi Luiz    | Testes, Documentação e Revisão |
 
 ## Licença

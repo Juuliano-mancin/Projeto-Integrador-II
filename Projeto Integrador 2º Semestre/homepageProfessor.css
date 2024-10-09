@@ -21,7 +21,7 @@ header {
     text-align: center; /* Centraliza o texto */
     font-weight: bold; /* Peso da fonte do header */
     font-size: 16px; /* Tamanho da fonte do header */
-    background-color: #E03C31; /* Vermelho CPS para o cabeçalho */
+    background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
     color: #FFFFFF; /* Texto branco */
 }
 
@@ -55,10 +55,11 @@ header {
 /* Estilo do campo de filtro */
 .inputFiltro {
     width: 30%; /* Largura total */
+    height: 5px;
     padding: 10px; /* Espaçamento interno */
     border: 1px solid #A7A8AA; /* Borda cinza */
     border-radius: 5px; /* Bordas arredondadas */
-    background-color: rgba(192, 192, 192, 0.5); /* Cinza com 50% de transparência */
+    background-color: #DADADA(0.5); /* Cinza com 50% de transparência */
 }
 
 /* Estilos da tabela */
@@ -77,7 +78,7 @@ th, td {
 
 /* Estilos para cabeçalhos da tabela */
 th {
-    background-color: #E03C31; /* Vermelho CPS para cabeçalhos da tabela */
+    background-color: #7E0000; /* Vermelho CPS para cabeçalhos da tabela */
     color: #FFFFFF; /* Texto branco */
 }
 
@@ -105,4 +106,5 @@ th {
     margin-right: 10px; /* Espaçamento entre o ícone e o texto */
     width: 20px; /* Largura do ícone */
     height: 20px; /* Altura do ícone */
+    
 }

@@ -1,17 +1,25 @@
-/* Formatação da div principal */
+/* Aplicação da fonte principal Roboto no corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 20px; /* Altura da linha ajustada em múltiplos de 4px */
+    color: #333; /* Cor padrão do texto */
+}
+
+/* Estilo da div principal */
 .principal {
     position: fixed;              /* Posiciona a div de forma fixa na tela */
     top: 50%;                    /* Centraliza verticalmente */
     left: 50%;                   /* Centraliza horizontalmente */
     transform: translate(-50%, -50%); /* Aplica a transformação para o centro exato */
     padding: 20px;               /* Espaçamento interno da div */
-    border: 1px solid #000000;   /* Borda preta */
+    border: 1px solid #DADADA;   /* Borda preta */
     border-radius: 15px;         /* Bordas arredondadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efeito de profundidade */
     background-color: #ffffff;   /* Cor de fundo branca */
     width: 550px;                /* Largura fixa da div */
     margin-right: -80px;         /* Margem negativa à direita */
-    background-image: url(img/Efeitos_customizados/Efeito_login.png); /* Imagem de fundo */
+    background-image: url(img/Efeitos_customizados/Efeito_login02.png); /* Imagem de fundo */
     background-position: right;   /* Posiciona a imagem de fundo à direita */
     background-repeat: no-repeat; /* Não repete a imagem de fundo */
     background-size: contain;     /* Ajusta a imagem de fundo para caber na div */
@@ -24,64 +32,83 @@
     align-items: flex-start;      /* Alinha os itens à esquerda */
 }
 
+/* Estilo do título, usando Roboto Slab */
 .titulo {
-    font-size: 32px;              /* Tamanho do texto aumentado para "Faça Login" */
-    font-weight: bold;            /* Texto em negrito */
-    margin: 0;                    /* Remove margens padrões */
-    color: black;                 /* Cor do texto preta */
+    font-family: 'Roboto Slab', serif;
+    font-size: 24px;
+    font-weight: 500; /* Peso semibold para destaque */
+    margin: 0;
+    color: black;
 }
 
+/* Estilo do subtítulo, usando Roboto */
 .subtitulo {
-    font-size: 16px;              /* Tamanho menor para "para continuar" */
-    margin: 0;                    /* Remove margens padrões */
-    margin-left: 62px;            /* Indentação para alinhar com o título */
-    color: #666666;               /* Cor do texto cinza */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 20px;
+    color: #666666;
 }
 
+/* Estilo dos ícones */
 .icon {
-    width: 15px;                  /* Largura do ícone */
-    height: auto;                 /* Altura automática para manter proporção */
-    margin-right: 5px;            /* Espaço entre o ícone e o texto */
-    vertical-align: baseline;      /* Alinha o ícone verticalmente com o texto */
+    width: 15px;
+    height: auto;
+    margin-right: 5px;
+    vertical-align: baseline;
 }
 
+/* Container para os inputs */
 .input-container {
-    display: flex;                 /* Utiliza flexbox para layout */
-    align-items: center;          /* Alinha itens verticalmente ao centro */
+    display: flex;
+    align-items: center;
 }
 
 .input-container input[type="submit"] {
-    margin-left: 10px;            /* Espaço entre o campo de senha e o botão */
+    margin-left: 10px;
 }
 
+/* Estilo do botão de submit */
 input[type="submit"] {
-    padding: 4px 8px;             /* Paddings reduzidos para um tamanho menor */
-    text-align: center;            /* Centraliza o texto do botão */
-    display: inline-block;         /* Exibição em linha */
-    font-size: 15px;               /* Tamanho da fonte do botão */
-    font-weight: 500;              /* Negrito leve */
-    border-radius: 10px;           /* Bordas arredondadas */
-    cursor: pointer;               /* Cursor em formato de pointer ao passar o mouse */
-    background-color: #B20000;    /* Cor de fundo do botão vermelha */
-    color: #FFFFFF;                /* Cor do texto do botão branca */
+    padding: 4px 8px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #7E0000;
+    color: #FFFFFF;
+    border-style: solid;
+    border-width: thin;
+    border-color: #7E0000;
 }
 
 input[type="submit"]:hover {
-    background-color: #D32719;    /* Cor ao passar o mouse no botão */
+    background-color: #B20000;
 }
 
+/* Estilo dos rótulos */
 label {
-    font-size: 20px;               /* Aumenta levemente a fonte dos rótulos */
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
 }
 
+/* Estilo dos campos de texto e senha */
 input[type="text"], input[type="password"] {
-    border: 1px solid #B0B0B0;     /* Borda mais clara */
-    border-radius: 5px;            /* Bordas arredondadas */
-    font-size: 16px;               /* Tamanho da fonte */
-    box-sizing: border-box;        /* Inclui padding e borda na largura total */
+    border: 1px solid #B0B0B0;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box;
 }
 
+/* Estilo do placeholder */
 input::placeholder {
-    color: rgba(128, 128, 128, 0.5); /* Cor cinza com 50% de transparência para o placeholder */
-    font-style: italic;            /* Opcional: deixa o texto do placeholder em itálico */
+    color: rgba(128, 128, 128, 0.5);
+    font-style: italic;
 }

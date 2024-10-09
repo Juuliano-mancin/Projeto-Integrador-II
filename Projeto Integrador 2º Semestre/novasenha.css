@@ -1,17 +1,20 @@
-/* Formatação da div principal */
+/* Inclusão das fontes conforme o Guia de Estilo CPS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;500&display=swap');
+
+/* Formatação da div principal */ 
 .principal {
     position: fixed;                              /* Posiciona a div de forma fixa na tela */
     top: 50%;                                    /* Centraliza verticalmente */
     left: 50%;                                   /* Centraliza horizontalmente */
     transform: translate(-50%, -50%);           /* Aplica a transformação para o centro exato */
     padding: 20px;                               /* Espaçamento interno da div */
-    border: 1px solid #000000;                   /* Borda preta */
+    border: 1px solid #DADADA;                   /* Borda preta */
     border-radius: 15px;                         /* Bordas arredondadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   /* Sombra para efeito de profundidade */
     background-color: #ffffff;                   /* Cor de fundo branca */
     width: 550px;                                /* Largura fixa da div */
     margin-right: -80px;                         /* Margem negativa à direita */
-    background-image: url(img/Efeitos_customizados/Efeito_novaSenha.png); /* Imagem de fundo */
+    background-image: url(img/Efeitos_customizados/Efeito_novasenha02.png); /* Imagem de fundo */
     background-position: right;                   /* Posiciona a imagem de fundo à direita */
     background-repeat: no-repeat;                 /* Não repete a imagem de fundo */
     background-size: contain;                     /* Ajusta a imagem de fundo para caber na div */
@@ -26,6 +29,7 @@
 
 /* Estilo para o título da página */
 .titulo {
+    font-family: 'Roboto Slab', serif;            /* Fonte Roboto Slab para título */
     font-size: 32px;                             /* Tamanho do texto aumentado para "Solicitar Nova Senha" */
     font-weight: bold;                           /* Texto em negrito */
     margin: 0;                                   /* Remove margens padrões */
@@ -34,6 +38,7 @@
 
 /* Estilo para o subtítulo da página */
 .subtitulo {
+    font-family: 'Roboto', sans-serif;           /* Fonte Roboto para subtítulo */
     font-size: 16px;                             /* Tamanho menor para "para continuar" */
     margin: 0;                                   /* Remove margens padrões */
     margin-left: 0;                              /* Alinha com o título */
@@ -56,29 +61,35 @@
 
 /* Estilo específico para o botão de envio */
 input[type="submit"] {
+    font-family: 'Roboto', sans-serif;           /* Fonte Roboto para o botão */
     padding: 4px 8px;                           /* Paddings reduzidos para um tamanho menor */
     text-align: center;                          /* Centraliza o texto do botão */
     display: inline-block;                       /* Exibição em linha */
     font-size: 15px;                             /* Tamanho da fonte do botão */
     font-weight: 500;                            /* Negrito leve */
-    border-radius: 10px;                         /* Bordas arredondadas */
+    border-radius: 5px;                         /* Bordas arredondadas */
     cursor: pointer;                             /* Cursor em formato de pointer ao passar o mouse */
-    background-color: #A0C340;                  /* Cor de fundo do botão */
-    color: #000000;                              /* Cor do texto do botão preta */
+    background-color: #00C1CF;                  /* Cor de fundo do botão */
+    color: white;
+    border-style: solid;
+    border-width: thin;
+    border-color: #00C1CF;                              /* Cor do texto do botão preta */
 }
 
 /* Efeito ao passar o mouse no botão */
 input[type="submit"]:hover {
-    background-color: #b1d847;                  /* Cor ao passar o mouse no botão */
+    background-color: #00D8E8;                  /* Cor ao passar o mouse no botão */
 }
 
 /* Estilo para rótulos dos campos */
 label {
+    font-family: 'Roboto', sans-serif;           /* Fonte Roboto para rótulos */
     font-size: 20px;                             /* Aumenta levemente a fonte dos rótulos */
 }
 
 /* Estilo para campos de entrada de senha */
 input[type="password"] {
+    font-family: 'Roboto', sans-serif;           /* Fonte Roboto para os campos de entrada */
     border: 1px solid #B0B0B0;                  /* Borda mais clara */
     border-radius: 5px;                          /* Bordas arredondadas */
     font-size: 16px;                             /* Tamanho da fonte */

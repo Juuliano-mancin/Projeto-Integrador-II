@@ -19,3 +19,6 @@
 
 Adicionar o semestre da Reposição
 e analisar e alterar no banco a possibilidade de colocar a sala da reposição
+
+Remover telas de Cadastro de Curso, Disciplina e Funcionário.
+Os dados do banco serão preenchidos pelo beckend sem necessidade das telas de cadastros.

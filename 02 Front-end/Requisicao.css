@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #fff; /* Fundo branco */
+    color: #000; /* Texto preto */
+}
+
+.divPrincipal {
+    display: flex; /* Ativa o flexbox */
+    flex-direction: column; /* Define a direção das divs como coluna */
+    border: 1px solid #000; /* Borda preta */
+    border-radius: 8px;
+    padding: 20px; /* Padding para a div principal */
+}
+
+.div1 {
+    display: flex; /* Ativa o flexbox na div1 */
+    flex-direction: row; /* Define a direção das divs como linha */
+    margin-bottom: 20px;
+    padding: 10px; /* Padding para a div1 */
+}
+
+.div2 {
+    display: flex; /* Ativa o flexbox na div2 */
+    flex-direction: column; /* A div2 agora possui direção de coluna */
+    padding: 10px; /* Padding para a div2 */
+}
+
+.subdiv1, .subdiv2 {
+    display: flex; /* Ativa o flexbox */
+    flex-direction: row; /* Define a direção das divs como linha */
+    justify-content: space-around; /* Espaçamento uniforme entre os elementos */
+    margin-top: 10px;
+    padding: 10px; /* Padding */
+    border: 1px solid #000; /* Borda preta */
+    border-radius: 4px; /* Borda arredondada */
+}
+
+.nova-div1, .nova-div2 {
+    flex: 1; /* Permite que as novas divs cresçam */
+    padding: 10px; /* Padding */
+}
+
+.radio-container {
+    display: flex; /* Ativa o flexbox para os elementos dentro da nova-div1 */
+    justify-items: flex-start;
+    align-items: center; /* Alinha os elementos verticalmente ao centro */
+    margin-bottom: 10px; /* Espaço entre as linhas */
+    padding: 5px; /* Padding dentro do container */
+}
+
+.label-radio {
+    width: 300px; /* Aumenta a largura das labels */
+    margin-right: 5px; /* Espaço entre a label e o input */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select, input[type="date"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #000; /* Borda preta */
+    border-radius: 4px;
+    background-color: #fff; /* Fundo branco */
+    color: #000; /* Texto preto */
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+button {
+    padding: 10px 20px; /* Tamanho do botão */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 1px solid #000; /* Borda preta */
+    border-radius: 4px; /* Borda arredondada */
+    cursor: pointer; /* Aponta o cursor para indicar que o botão é clicável */
+    background-color: transparent; /* Remove cor de fundo */
+    color: inherit; /* Mantém a cor do texto padrão */
+}
+
+button:hover {
+    background-color: #f0f0f0; /* Cor ao passar o mouse, sem coloração */
+}

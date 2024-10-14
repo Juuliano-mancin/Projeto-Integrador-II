@@ -5,98 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Requisição de Faltas</title>
-    <!-- Importando o arquivo CSS externo -->
-    <link rel="stylesheet" href="Requisicao.css">
+    <link rel="stylesheet" href="FormularioRequisicao.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>PORTAL JUSTIFICATIVA DE FALTAS</h1>
-        <h2>TELA DE REQUISIÇÃO</h2>
+            <h1>PORTAL JUSTIFICATIVA DE FALTAS</h1>
+            <h2>Nova Requisição - Justificativa de Faltas</h2>
     </header>
 
-    <div class="divPrincipal">
-        <div class="div1">
-            <div>Nome Professor: [INFORMAÇÃO DO BANCO DE DADOS]</div>
-            <div>Número Matrícula: [INFORMAÇÃO DO BANCO DE DADOS]</div>
-            <div>Função: Professor de Ensino Superior</div>
-            <div>Regime Jurídico: CLT</div>
-        </div>
+    <main>
+        <form>
+            <div class="divPrincipal">
+                <div class="div1">
+                    <div> Nome Professor: informação do banco de dados </div>
+                    <div> Número Matrícula: informação do banco de dados </div>
+                    <div> Função: Professor de Ensino Superior </div>
+                    <div> Regime Jurídico: CLT </div>
+                </div>
 
-        <div class="div2">
-            <div class="subdiv1">
-                <div>
-                    <label for="cursos">Cursos:</label>
-                    <select id="cursos">
-                        <option value="">Selecione o curso</option>
-                        <option value="curso1">Curso 1</option>
-                        <option value="curso2">Curso 2</option>
-                        <option value="curso3">Curso 3</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="data-inicial">Data Inicial:</label>
-                    <input type="date" id="data-inicial">
-                </div>
-                <div>
-                    <label for="data-final">Data Final:</label>
-                    <input type="date" id="data-final">
-                </div>
-            </div>
-            <div class="subdiv2">
-                <div class="nova-div1">
-                    <div class="radio-container" id="licenca-falta">
-                        <input type="radio" id="licenca-falta-radio" name="justificativa">
-                        <label class="label-radio" for="licenca-falta-radio">01 Licença e Falta médica</label>
-                        <select id="justificativa1">
-                            <option value="">Selecione a justificativa</option>
-                            <option value="justificativa1-1">Justificativa 1</option>
-                            <option value="justificativa1-2">Justificativa 2</option>
-                            <option value="justificativa1-3">Justificativa 3</option>
-                        </select>
+                <div class="div2">
+                    <div class="subdiv1">
+                        <div>
+                            <label>Selecione o curso:</label> <!-- Texto antes do select -->
+                            <select id="cursos" aria-label="Selecione o curso">
+                                <option value="">Selecione um curso</option>
+                                <option value="curso1">Desenvolvimento de Software Multiplataforma</option>
+                                <option value="curso2">Gestão de Produção Industrial </option>
+                                <option value="curso3">Gestão Empresarial</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Insira a data inicial:</label> <!-- Texto antes do input -->
+                            <input type="date" id="data-inicial" aria-label="Data inicial">
+                        </div>
+                        <div>
+                            <label>Insira a data final:</label> <!-- Texto antes do input -->
+                            <input type="date" id="data-final" aria-label="Data final">
+                        </div>
                     </div>
-                    <div class="radio-container" id="faltas-injustificadas">
-                        <input type="radio" id="faltas-injustificadas-radio" name="justificativa">
-                        <label class="label-radio" for="faltas-injustificadas-radio">02 Faltas Injustificadas</label>
-                        <select id="justificativa2">
-                            <option value="">Selecione a justificativa</option>
-                            <option value="justificativa2-1">Justificativa 1</option>
-                            <option value="justificativa2-2">Justificativa 2</option>
-                            <option value="justificativa2-3">Justificativa 3</option>
-                        </select>
+                    <div class="subdiv2">
+                        <div class="nova-div1">
+                            <div class="radio-container" id="licenca-falta">
+                                <input type="radio" id="licenca-falta-radio" name="justificativa" aria-label="Licença e Falta médica">
+                                <label class="label-radio" for="licenca-falta-radio">01 Licença e Falta médica</label>
+                                <select id="justificativa1" aria-label="Justificativa 1">
+                                    <option value="">Selecione a justificativa</option>
+                                    <option value="justificativa1-1">Justificativa 1</option>
+                                    <option value="justificativa1-2">Justificativa 2</option>
+                                    <option value="justificativa1-3">Justificativa 3</option>
+                                </select>
+                            </div>
+                            <div class="radio-container" id="faltas-injustificadas">
+                                <input type="radio" id="faltas-injustificadas-radio" name="justificativa" aria-label="Faltas Injustificadas">
+                                <label class="label-radio" for="faltas-injustificadas-radio">02 Faltas Injustificadas</label>
+                                <select id="justificativa2" aria-label="Justificativa 2">
+                                    <option value="">Selecione a justificativa</option>
+                                    <option value="justificativa2-1">Justificativa 1</option>
+                                    <option value="justificativa2-2">Justificativa 2</option>
+                                    <option value="justificativa2-3">Justificativa 3</option>
+                                </select>
+                            </div>
+                            <div class="radio-container" id="faltas-justificadas">
+                                <input type="radio" id="faltas-justificadas-radio" name="justificativa" aria-label="Faltas Justificadas">
+                                <label class="label-radio" for="faltas-justificadas-radio">03 Faltas Justificadas</label>
+                                <select id="justificativa3" aria-label="Justificativa 3">
+                                    <option value="">Selecione a justificativa</option>
+                                    <option value="justificativa3-1">Justificativa 1</option>
+                                    <option value="justificativa3-2">Justificativa 2</option>
+                                    <option value="justificativa3-3">Justificativa 3</option>
+                                </select>
+                            </div>
+                            <div class="radio-container" id="faltas-previstas">
+                                <input type="radio" id="faltas-previstas-radio" name="justificativa" aria-label="Faltas Previstas em Lei">
+                                <label class="label-radio" for="faltas-previstas-radio">04 Faltas Previstas em Lei</label>
+                                <select id="justificativa4" aria-label="Justificativa 4">
+                                    <option value="">Selecione a justificativa</option>
+                                    <option value="justificativa4-1">Justificativa 1</option>
+                                    <option value="justificativa4-2">Justificativa 2</option>
+                                    <option value="justificativa4-3">Justificativa 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="nova-div2">
+                            <textarea id="comentarios" rows="10" placeholder="Complemente aqui a sua justificativa de falta"></textarea>
+                        </div>
                     </div>
-                    <div class="radio-container" id="faltas-justificadas">
-                        <input type="radio" id="faltas-justificadas-radio" name="justificativa">
-                        <label class="label-radio" for="faltas-justificadas-radio">03 Faltas Justificadas</label>
-                        <select id="justificativa3">
-                            <option value="">Selecione a justificativa</option>
-                            <option value="justificativa3-1">Justificativa 1</option>
-                            <option value="justificativa3-2">Justificativa 2</option>
-                            <option value="justificativa3-3">Justificativa 3</option>
-                        </select>
-                    </div>
-                    <div class="radio-container" id="faltas-previstas">
-                        <input type="radio" id="faltas-previstas-radio" name="justificativa">
-                        <label class="label-radio" for="faltas-previstas-radio">04 Faltas Previstas em Lei</label>
-                        <select id="justificativa4">
-                            <option value="">Selecione a justificativa</option>
-                            <option value="justificativa4-1">Justificativa 1</option>
-                            <option value="justificativa4-2">Justificativa 2</option>
-                            <option value="justificativa4-3">Justificativa 3</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="nova-div2">
-                    <label for="comentarios"></label>
-                    <textarea id="comentarios" rows="10" placeholder="Complemente aqui a sua justificativa de falta"></textarea>
-                </div>
-            </div>
 
-            <!-- Botões adicionados -->
-            <div class="button-container">
-                <button id="upload-documento">Upload de Documento</button>
-                <button id="proxima-pagina">Reposição de Aula</button>
+                    <div class="button-container">
+                        <button id="upload-documento" aria-label="Upload de Documento">
+                            <img src="img/Icones/arquivoPDF.svg" alt="Ícone de upload" style="width: 20px; height: 20px; margin-right: 5px;">
+                            Upload de Documento
+                        </button>
+                        <button id="proxima-pagina" aria-label="Reposição de Aula">Reposição de Aula</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </form>
+    </main>
 </body>
 </html>

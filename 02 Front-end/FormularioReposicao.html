@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="FormularioReposicao.css">
+    <title>Reposição de faltas</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="div1">
+                <h2>PORTAL JUSTIFICATIVA DE FALTAS</h2>
+                <h3>Nova Requisição - Reposição de Aulas</h3>
+            </div>
+            <div class="div2">
+                <p>PLACEHOLDER LOGOTIPO CPS</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="divprincipal">
+        <div class="div1-principal">
+            <div class="field-container">
+                <fieldset>
+                    <legend>Turno da Reposição:</legend>
+                    <label>
+                        <input type="checkbox" name="turno" value="manha"> Manhã
+                    </label>
+                    <label>
+                        <input type="checkbox" name="turno" value="tarde"> Tarde
+                    </label>
+                    <label>
+                        <input type="checkbox" name="turno" value="noite"> Noite
+                    </label>
+                </fieldset>
+            </div>
+
+            <div class="field-container">
+                <fieldset>
+                    <legend>Tipo de Reposição:</legend>
+                    <label>
+                        <input type="checkbox" name="tipo" value="aula"> Aula Ministrada
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tipo" value="atividade"> Atividade
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tipo" value="outros"> Outros
+                    </label>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="div2-principal">
+            <div class="tabela-container">
+                <!-- Tabela 01 -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="4">Dados aulas não ministradas</th>
+                        </tr>
+                        <tr>
+                            <th>Ordem</th>
+                            <th>Data Aula</th>
+                            <th>Número Aulas</th>
+                            <th>Disciplina</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="date" name="data_aula_1"></td>
+                            <td>
+                                <select name="numero_aulas_1">
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_1">
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="date" name="data_aula_2"></td>
+                            <td>
+                                <select name="numero_aulas_2">
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_2">
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="date" name="data_aula_3"></td>
+                            <td>
+                                <select name="numero_aulas_3">
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_3">
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="date" name="data_aula_4"></td>
+                            <td>
+                                <select name="numero_aulas_4">
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_4">
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="date" name="data_aula_5"></td>
+                            <td>
+                                <select name="numero_aulas_5">
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_5">
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><input type="date" name="data_aula_6"></td>
+                            <td>
+                                <select name="numero_aulas_6">
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_6">
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tabela-container">
+                <!-- Tabela 02 -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="3">Dados aulas de reposição</th>
+                        </tr>
+                        <tr>
+                            <th>Data Reposição</th>
+                            <th>Horário Início</th>
+                            <th>Horário Final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="date" name="data_reposicao_1"></td>
+                            <td><input type="time" name="horario_inicio_1"></td>
+                            <td><input type="time" name="horario_final_1"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="date" name="data_reposicao_2"></td>
+                            <td><input type="time" name="horario_inicio_2"></td>
+                            <td><input type="time" name="horario_final_2"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="date" name="data_reposicao_3"></td>
+                            <td><input type="time" name="horario_inicio_3"></td>
+                            <td><input type="time" name="horario_final_3"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="date" name="data_reposicao_4"></td>
+                            <td><input type="time" name="horario_inicio_4"></td>
+                            <td><input type="time" name="horario_final_4"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="date" name="data_reposicao_5"></td>
+                            <td><input type="time" name="horario_inicio_5"></td>
+                            <td><input type="time" name="horario_final_5"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="date" name="data_reposicao_6"></td>
+                            <td><input type="time" name="horario_inicio_6"></td>
+                            <td><input type="time" name="horario_final_6"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button type="submit">Salvar e Enviar</button>
+            <button type="reset">Voltar</button>
+        </div>
+    </div>
+</body>
+</html>

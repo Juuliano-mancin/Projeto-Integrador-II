@@ -13,13 +13,12 @@
         <div class="principal">
             <div class="divA">
                 <div class="subDiv1">
-                    <h2>PORTAL JUSTIFICATIVA DE FALTAS</h1>
-                    <h3>Nova Requisição - Justificativa de Faltas</h2>
+                    <h2>PORTAL JUSTIFICATIVA DE FALTAS</h2>
+                    <h3>Nova Requisição - Justificativa de Faltas</h3>
                 </div>
                 
-                
                 <div class="subDiv2">        
-                    <img src="img/Logos_oficiais/logo_cps_versao_br.png">
+                    <img src="img/Logos_oficiais/logo_cps_versao_br.png" alt="Logo">
                 </div>
             </div>
         </div>
@@ -118,47 +117,7 @@
         </form>
     </main>
 
-    <!-- JavaScript para habilitar/desabilitar os selects conforme o rádio selecionado e para upload de arquivo -->
-    <script>
-        // Seleciona todos os inputs do tipo radio e os selects correspondentes
-        const radios = document.querySelectorAll('input[name="justificativa"]');
-        const selects = {
-          'licenca-falta-radio': document.getElementById('justificativa1'),
-          'faltas-injustificadas-radio': document.getElementById('justificativa2'),
-          'faltas-justificadas-radio': document.getElementById('justificativa3'),
-          'faltas-previstas-radio': document.getElementById('justificativa4')
-        };
-
-        // Adiciona um event listener para cada input do tipo radio
-        radios.forEach(radio => {
-          radio.addEventListener('change', () => {
-            // Desabilita todos os selects primeiro
-            Object.values(selects).forEach(select => {
-              select.disabled = true;
-            });
-
-            // Ativa apenas o select correspondente ao rádio selecionado
-            if (radio.checked) {
-              selects[radio.id].disabled = false;
-            }
-          });
-        });
-
-        // Função para abrir o seletor de arquivo ao clicar no botão de upload
-        const uploadButton = document.getElementById('upload-documento');
-        const inputFile = document.getElementById('input-file');
-
-        uploadButton.addEventListener('click', () => {
-            inputFile.click(); // Simula um clique no input do tipo file
-        });
-
-        // Função para capturar o arquivo selecionado
-        inputFile.addEventListener('change', (event) => {
-            const selectedFile = event.target.files[0];
-            if (selectedFile) {
-                alert(`Ficheiro selecionado: ${selectedFile.name}`);
-            }
-        });
-    </script>
+    <!-- Importa o arquivo JavaScript -->
+    <script src="FormularioRequisicao.js"></script>
 </body>
 </html>

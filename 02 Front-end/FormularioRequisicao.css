@@ -145,8 +145,8 @@ header {
 /* Estilos para as subdivisões e a divB */
 .subDiv1, .subDiv2 {
 
-    padding: 10px;
-    margin: 5px;
+    padding: 10px 20px;
+    
 }
 .subDiv2 img {
     height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */

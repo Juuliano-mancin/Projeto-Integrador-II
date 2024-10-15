@@ -1,12 +1,13 @@
 body {
     font-family: 'Roboto', sans-serif; /* Texto geral */
-    margin: 20px;
+    margin: 0px;
+    height: 100vh; /* Altura total da viewport */
     padding: 0;
     background-color: #f9f9f9; /* Fundo suave */
     color: #333333; /* Texto principal */
 }
 
-h1, h2 {
+h2, h3 {
     font-family: 'Roboto Slab', serif; /* Títulos */
     margin: 0;
 }
@@ -14,9 +15,10 @@ h1, h2 {
 .divPrincipal {
     display: flex; 
     flex-direction: column; 
-    border: 1px solid #CCCCCC; /* Borda sutil */
+    border: 1px solid #E6E6E6; /* Borda sutil */
     border-radius: 8px;
     padding: 20px; 
+    margin: 100px auto 0; /* Margem superior para não sobrepor o header */
 }
 
 .div1 {
@@ -39,7 +41,7 @@ h1, h2 {
     justify-content: flex-start; 
     margin-top: 10px;
     padding: 10px; 
-    border: 1px solid #CCCCCC; /* Borda sutil */
+    border: 1px solid #E6E6E6; /* Borda sutil */
     border-radius: 4px;
 }
 
@@ -79,10 +81,10 @@ select, input[type="date"], textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #CCCCCC; /* Borda sutil */
+    border: 1px solid #dadada; /* Borda sutil */
     border-radius: 4px;
-    background-color: #fff; 
-    color: #333333; 
+    background-color: #FFFF; 
+    color: #666666; 
 }
 
 input[type="radio"] {
@@ -105,21 +107,48 @@ button {
     justify-content: center; /* Centraliza os itens horizontalmente */
     padding: 10px 20px; 
     font-size: 16px; 
-    border: 1px solid #CCCCCC; /* Borda sutil */
+    border: 1px solid #B20000; /* Borda sutil */
     border-radius: 4px; 
     cursor: pointer; 
-    background-color:#f9f9f9; /* Azul para o botão */
-    color: #7E0000; /* Texto branco */
+    background-color:#B20000; /* Azul para o botão */
+    color: #f8f8f8; /* Texto branco */
     transition: background-color 0.3s; /* Efeito de transição */
 }
 
 button:hover {
-    background-color: #e4e4e4; /* Cor ao passar o mouse */
+    background-color: #7E0000; /* Cor ao passar o mouse */
 }
 
 header {
-    align-items: center; /* Alinha verticalmente os itens ao centro */
-    background-color: #F8F8F8; /* Cor de fundo do cabeçalho */
-    color: #7E0000; /* Cor do texto do cabeçalho */
-    padding: 20px; /* Espaçamento interno */
+    flex-direction: row;
+    justify-content: center; /* Alinha verticalmente os itens ao centro */
+    position: fixed; /* Fixa o header no topo */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    padding: 10px 0; /* Espaçamento interno */
+    background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
+    color: #FFFFFF; /* Texto branco */
+    
+}
+.principal {
+    display: flex;
+    flex-direction: column;
+}
+/* DivA: duas subdivisões alinhadas lado a lado */
+.divA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+}
+
+/* Estilos para as subdivisões e a divB */
+.subDiv1, .subDiv2 {
+
+    padding: 10px;
+    margin: 5px;
+}
+.subDiv2 img {
+    height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */
+    width: auto; /* Mantém a proporção da imagem */
 }

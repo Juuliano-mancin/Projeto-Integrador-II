@@ -10,10 +10,21 @@
 </head>
 <body>
     <header>
-            <h1>PORTAL JUSTIFICATIVA DE FALTAS</h1>
-            <h2>Nova Requisição - Justificativa de Faltas</h2>
+        <div class="principal">
+            <div class="divA">
+                <div class="subDiv1">
+                    <h2>PORTAL JUSTIFICATIVA DE FALTAS</h1>
+                    <h3>Nova Requisição - Justificativa de Faltas</h2>
+                </div>
+                
+                
+                <div class="subDiv2">        
+                    <img src="img/Logos_oficiais/logo_cps_versao_br.png">
+                </div>
+            </div>
+        </div>
     </header>
-
+    <br /><br />
     <main>
         <form>
             <div class="divPrincipal">
@@ -27,20 +38,20 @@
                 <div class="div2">
                     <div class="subdiv1">
                         <div>
-                            <label>Selecione o curso:</label> <!-- Texto antes do select -->
+                            <label>Selecione o curso:</label>
                             <select id="cursos" aria-label="Selecione o curso">
                                 <option value="">Selecione um curso</option>
                                 <option value="curso1">Desenvolvimento de Software Multiplataforma</option>
-                                <option value="curso2">Gestão de Produção Industrial </option>
+                                <option value="curso2">Gestão de Produção Industrial</option>
                                 <option value="curso3">Gestão Empresarial</option>
                             </select>
                         </div>
                         <div>
-                            <label>Insira a data inicial:</label> <!-- Texto antes do input -->
+                            <label>Insira a data inicial:</label>
                             <input type="date" id="data-inicial" aria-label="Data inicial">
                         </div>
                         <div>
-                            <label>Insira a data final:</label> <!-- Texto antes do input -->
+                            <label>Insira a data final:</label>
                             <input type="date" id="data-final" aria-label="Data final">
                         </div>
                     </div>
@@ -49,9 +60,9 @@
                             <div class="radio-container" id="licenca-falta">
                                 <input type="radio" id="licenca-falta-radio" name="justificativa" aria-label="Licença e Falta médica">
                                 <label class="label-radio" for="licenca-falta-radio">01 Licença e Falta médica</label>
-                                <select id="justificativa1" aria-label="Justificativa 1">
+                                <select id="justificativa1" aria-label="Justificativa 1" disabled>
                                     <option value="">Selecione a justificativa</option>
-                                    <option value="justificativa1-1">Justificativa 1</option>
+                                    <option value="justificativa1-1">Atestado médico 1</option>
                                     <option value="justificativa1-2">Justificativa 2</option>
                                     <option value="justificativa1-3">Justificativa 3</option>
                                 </select>
@@ -59,7 +70,7 @@
                             <div class="radio-container" id="faltas-injustificadas">
                                 <input type="radio" id="faltas-injustificadas-radio" name="justificativa" aria-label="Faltas Injustificadas">
                                 <label class="label-radio" for="faltas-injustificadas-radio">02 Faltas Injustificadas</label>
-                                <select id="justificativa2" aria-label="Justificativa 2">
+                                <select id="justificativa2" aria-label="Justificativa 2" disabled>
                                     <option value="">Selecione a justificativa</option>
                                     <option value="justificativa2-1">Justificativa 1</option>
                                     <option value="justificativa2-2">Justificativa 2</option>
@@ -69,7 +80,7 @@
                             <div class="radio-container" id="faltas-justificadas">
                                 <input type="radio" id="faltas-justificadas-radio" name="justificativa" aria-label="Faltas Justificadas">
                                 <label class="label-radio" for="faltas-justificadas-radio">03 Faltas Justificadas</label>
-                                <select id="justificativa3" aria-label="Justificativa 3">
+                                <select id="justificativa3" aria-label="Justificativa 3" disabled>
                                     <option value="">Selecione a justificativa</option>
                                     <option value="justificativa3-1">Justificativa 1</option>
                                     <option value="justificativa3-2">Justificativa 2</option>
@@ -79,7 +90,7 @@
                             <div class="radio-container" id="faltas-previstas">
                                 <input type="radio" id="faltas-previstas-radio" name="justificativa" aria-label="Faltas Previstas em Lei">
                                 <label class="label-radio" for="faltas-previstas-radio">04 Faltas Previstas em Lei</label>
-                                <select id="justificativa4" aria-label="Justificativa 4">
+                                <select id="justificativa4" aria-label="Justificativa 4" disabled>
                                     <option value="">Selecione a justificativa</option>
                                     <option value="justificativa4-1">Justificativa 1</option>
                                     <option value="justificativa4-2">Justificativa 2</option>
@@ -93,8 +104,11 @@
                     </div>
 
                     <div class="button-container">
-                        <button id="upload-documento" aria-label="Upload de Documento">
-                            <img src="img/Icones/arquivoPDF.svg" alt="Ícone de upload" style="width: 20px; height: 20px; margin-right: 5px;">
+                        <!-- Campo de input para upload de arquivo, escondido -->
+                        <input type="file" id="input-file" style="display:none;">
+                        
+                        <button type="button" id="upload-documento" aria-label="Upload de Documento">
+                            <img src="img/Icones/arquivo_pdf.svg" alt="Ícone de upload" style="width: 20px; height: 20px; margin-right: 5px;">
                             Upload de Documento
                         </button>
                         <button id="proxima-pagina" aria-label="Reposição de Aula">Reposição de Aula</button>
@@ -103,5 +117,48 @@
             </div>
         </form>
     </main>
+
+    <!-- JavaScript para habilitar/desabilitar os selects conforme o rádio selecionado e para upload de arquivo -->
+    <script>
+        // Seleciona todos os inputs do tipo radio e os selects correspondentes
+        const radios = document.querySelectorAll('input[name="justificativa"]');
+        const selects = {
+          'licenca-falta-radio': document.getElementById('justificativa1'),
+          'faltas-injustificadas-radio': document.getElementById('justificativa2'),
+          'faltas-justificadas-radio': document.getElementById('justificativa3'),
+          'faltas-previstas-radio': document.getElementById('justificativa4')
+        };
+
+        // Adiciona um event listener para cada input do tipo radio
+        radios.forEach(radio => {
+          radio.addEventListener('change', () => {
+            // Desabilita todos os selects primeiro
+            Object.values(selects).forEach(select => {
+              select.disabled = true;
+            });
+
+            // Ativa apenas o select correspondente ao rádio selecionado
+            if (radio.checked) {
+              selects[radio.id].disabled = false;
+            }
+          });
+        });
+
+        // Função para abrir o seletor de arquivo ao clicar no botão de upload
+        const uploadButton = document.getElementById('upload-documento');
+        const inputFile = document.getElementById('input-file');
+
+        uploadButton.addEventListener('click', () => {
+            inputFile.click(); // Simula um clique no input do tipo file
+        });
+
+        // Função para capturar o arquivo selecionado
+        inputFile.addEventListener('change', (event) => {
+            const selectedFile = event.target.files[0];
+            if (selectedFile) {
+                alert(`Ficheiro selecionado: ${selectedFile.name}`);
+            }
+        });
+    </script>
 </body>
 </html>

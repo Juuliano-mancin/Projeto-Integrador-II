@@ -21,11 +21,19 @@ próximo passos:
 Autor: Juliano Mancini
 
 Front-End
-Tratamento de erros e validação básica para Formulario de reposição de aulas 
-Bugs para corrigir: o Checkbox fica inativo após tirar o selecionado e não volta mais
-Estilização visual: Corrigir os elementos dentro da tabela e as tabelas em si, ajustar o cabeçalho
+Tratamento de erros e validação básica para Formulario de reposição de aulas
+
+  Bugs para corrigir:
+    - Checkbox fica inativo após tirar o selecionado e não volta mais
+  Melhorias:
+    - Selecionar apenas uma checkbox em turno e em tipo de reposição
+    - A hora final da aula pode ser setada automaticamente para 03:30 depois da inicial. | Exemplo : hora inicial: 07:00 - Hora Final: 10:30|
+  Estilização visual:
+    - Corrigir os elementos dentro da tabela e as tabelas em si
+    - Ajustar o cabeçalho
+    - Revisão geral
 
 Github
-Nova pasta "08 backups" contendo versões anteriores do projeto. preferencialmente vai ser atualizada toda vez que o projeto for alterado.
+  - Criação de uma nova pasta "08 backups" contendo versões anteriores do projeto zipadas. preferencialmente vai ser atualizada toda vez que o projeto for alterado.
 
 ------------------------------------------------------------------------------

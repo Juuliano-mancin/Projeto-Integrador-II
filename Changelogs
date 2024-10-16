@@ -35,5 +35,6 @@ Tratamento de erros e validação básica para Formulario de reposição de aula
 
 Github
   - Criação de uma nova pasta "08 backups" contendo versões anteriores do projeto zipadas. preferencialmente vai ser atualizada toda vez que o projeto for alterado.
+  - Criação de uma nova pasta "09 Ambiente de teste" para testes em geral.
 
 ------------------------------------------------------------------------------

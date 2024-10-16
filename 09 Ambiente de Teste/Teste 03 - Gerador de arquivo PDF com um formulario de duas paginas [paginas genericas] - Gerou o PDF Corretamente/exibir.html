@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Formulário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            margin: 5px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+
+    <!-- Incluindo a biblioteca jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Dados do Formulário</h1>
+        <p id="representanteNome"></p>
+        <p id="representanteEmail"></p>
+        <p id="nome"></p>
+        <p id="email"></p>
+        <p id="telefone"></p>
+        <p id="endereco"></p>
+        <p id="cidade"></p>
+        <p id="estado"></p>
+        <p id="codigo_postal"></p>
+        <button id="gerarPDF">Gerar PDF</button>
+    </div>
+
+    <script>
+        // Capturando dados da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const dados = {
+            nome: urlParams.get('nome') || "Não informado",
+            email: urlParams.get('email') || "Não informado",
+            telefone: urlParams.get('telefone') || "Não informado",
+            endereco: urlParams.get('endereco') || "Não informado",
+            cidade: urlParams.get('cidade') || "Não informado",
+            estado: urlParams.get('estado') || "Não informado",
+            codigo_postal: urlParams.get('codigo_postal') || "Não informado",
+        };
+
+        // Exibir os dados na página
+        document.getElementById('representanteNome').innerText = "Nome do Representante: João";
+        document.getElementById('representanteEmail').innerText = "Email do Representante: joao@email.com";
+        document.getElementById('nome').innerText = `Nome: ${dados.nome}`;
+        document.getElementById('email').innerText = `Email: ${dados.email}`;
+        document.getElementById('telefone').innerText = `Telefone: ${dados.telefone}`;
+        document.getElementById('endereco').innerText = `Endereço: ${dados.endereco}`;
+        document.getElementById('cidade').innerText = `Cidade: ${dados.cidade}`;
+        document.getElementById('estado').innerText = `Estado: ${dados.estado}`;
+        document.getElementById('codigo_postal').innerText = `Código Postal: ${dados.codigo_postal}`;
+
+        // Gerar PDF
+        document.getElementById('gerarPDF').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Cabeçalho do documento
+            doc.setFontSize(16);
+            doc.text("Dados do Formulário", 10, 10);
+            doc.setFontSize(12);
+
+            // Representante
+            doc.setFontSize(14);
+            doc.text("Nome do Representante: João", 10, 30);
+            doc.text("Email do Representante: joao@email.com", 10, 40);
+
+            // Dados do formulário
+            doc.setFontSize(12);
+            doc.text(`Nome: ${dados.nome}`, 10, 60);
+            doc.text(`Email: ${dados.email}`, 10, 70);
+            doc.text(`Telefone: ${dados.telefone}`, 10, 80);
+            doc.text(`Endereço: ${dados.endereco}`, 10, 90);
+            doc.text(`Cidade: ${dados.cidade}`, 10, 100);
+            doc.text(`Estado: ${dados.estado}`, 10, 110);
+            doc.text(`Código Postal: ${dados.codigo_postal}`, 10, 120);
+
+            // Gerando o PDF
+            doc.save('dados_formulario.pdf');
+        });
+    </script>
+</body>
+</html>

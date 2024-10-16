@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Geração de PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+    <!-- Importando jsPDF e jsPDF-AutoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.7/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Cadastro</h1>
+        <form id="formulario">
+            <table>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td>Nome</td>
+                    <td><input type="text" id="nome" name="nome" required></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Telefone</td>
+                    <td><input type="tel" id="telefone" name="telefone" required></td>
+                </tr>
+                <tr>
+                    <td>Senha</td>
+                    <td><input type="password" id="senha" name="senha" required></td>
+                </tr>
+            </table>
+
+            <h1>Outro Formulário</h1>
+            <table>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td>Endereço</td>
+                    <td><input type="text" id="endereco" name="endereco" required></td>
+                </tr>
+                <tr>
+                    <td>Cidade</td>
+                    <td><input type="text" id="cidade" name="cidade" required></td>
+                </tr>
+                <tr>
+                    <td>Estado</td>
+                    <td>
+                        <select id="estado" name="estado" required>
+                            <option value="">Selecione</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Código Postal</td>
+                    <td><input type="text" id="codigo_postal" name="codigo_postal" required></td>
+                </tr>
+            </table>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            
+            // Usando jsPDF e AutoTable
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Coletando os dados do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const senha = "Senha é confidencial"; // Mensagem de confidencialidade
+            const endereco = document.getElementById('endereco').value;
+            const cidade = document.getElementById('cidade').value;
+            const estado = document.getElementById('estado').value;
+            const codigoPostal = document.getElementById('codigo_postal').value;
+
+            // Adicionando os dados ao PDF em formato de tabela
+            doc.text("Dados do Formulário", 10, 10);
+            ({
+                head: [['Campo', 'Valor']],
+                body: [
+                    ['Nome', nome],
+                    ['Email', email],
+                    ['Telefone', telefone],
+                    ['Senha', senha],
+                    ['Endereço', endereco],
+                    ['Cidade', cidade],
+                    ['Estado', estado],
+                    ['Código Postal', codigoPostal],
+                ],
+                startY: 20,
+                theme: 'grid',
+            });
+
+            // Gerando o PDF
+            doc.save('formulario_dados.pdf');
+        });
+    </script>
+</body>
+</html>

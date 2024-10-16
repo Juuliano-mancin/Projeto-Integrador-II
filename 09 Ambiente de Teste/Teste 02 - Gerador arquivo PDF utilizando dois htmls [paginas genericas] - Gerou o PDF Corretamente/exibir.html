@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Formulário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            margin: 5px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Dados do Formulário</h1>
+        <p><strong>Nome:</strong> <span id="nome"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Telefone:</strong> <span id="telefone"></span></p>
+        <p><strong>Senha:</strong> Senha é confidencial</p>
+        <p><strong>Endereço:</strong> <span id="endereco"></span></p>
+        <p><strong>Cidade:</strong> <span id="cidade"></span></p>
+        <p><strong>Estado:</strong> <span id="estado"></span></p>
+        <p><strong>Código Postal:</strong> <span id="codigo_postal"></span></p>
+        <button id="gerarPDF">Gerar PDF</button>
+    </div>
+
+    <script>
+        // Função para coletar dados da URL
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            return params;
+        }
+
+        // Preenchendo os dados na página
+        const dados = getQueryParams();
+        document.getElementById('nome').innerText = dados.nome.replace(/\+/g, ' '); // Remove + do nome
+        document.getElementById('email').innerText = dados.email;
+        document.getElementById('telefone').innerText = dados.telefone;
+        document.getElementById('endereco').innerText = dados.endereco.replace(/\+/g, ' '); // Remove + do endereço
+        document.getElementById('cidade').innerText = dados.cidade;
+        document.getElementById('estado').innerText = dados.estado;
+        document.getElementById('codigo_postal').innerText = dados.codigo_postal;
+
+        // Gerar PDF
+        document.getElementById('gerarPDF').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Cabeçalho
+            doc.setFontSize(22);
+            doc.text("Nome da Empresa", 14, 20);
+            doc.setFontSize(12);
+            doc.text("Endereço da Empresa", 14, 30);
+            doc.text("Telefone: (XX) XXXX-XXXX", 14, 35);
+            doc.text("Email: contato@empresa.com", 14, 40);
+            doc.line(10, 45, 200, 45); // Linha horizontal
+            doc.text("Dados do Formulário", 14, 55);
+
+            // Adicionando dados ao PDF
+            doc.setFontSize(12);
+            doc.text(`Nome: ${dados.nome.replace(/\+/g, ' ')}`, 14, 65); // Remove + do nome
+            doc.text(`Email: ${dados.email}`, 14, 70);
+            doc.text(`Telefone: ${dados.telefone}`, 14, 75);
+            doc.text(`Senha: Senha é confidencial`, 14, 80);
+            doc.text(`Endereço: ${dados.endereco.replace(/\+/g, ' ')}`, 14, 85); // Remove + do endereço
+            doc.text(`Cidade: ${dados.cidade}`, 14, 90);
+            doc.text(`Estado: ${dados.estado}`, 14, 95);
+            doc.text(`Código Postal: ${dados.codigo_postal}`, 14, 100);
+
+            // Rodapé
+            doc.setFontSize(10);
+            doc.text("Documento gerado automaticamente", 14, doc.internal.pageSize.height - 20);
+            doc.text(`Data: ${new Date().toLocaleDateString()}`, 14, doc.internal.pageSize.height - 15);
+
+            // Gerar o PDF
+            doc.save('formulario_dados.pdf');
+        });
+    </script>
+</body>
+</html>

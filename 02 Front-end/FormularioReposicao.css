@@ -69,7 +69,7 @@ h2, h3 {
     justify-content: space-between; /* Espaçamento entre as seções */
     margin-bottom: 20px; /* Espaçamento inferior da div1-principal */
     border: 1px solid #E6E6E6; /* Borda sutil */
-    border-radius: 8px; /* Bordas arredondadas */
+    border-radius: 4px; /* Bordas arredondadas */
     padding: 20px; /* Preenchimento interno da div1-principal */
     margin-top: 20px;
 }
@@ -80,7 +80,7 @@ h2, h3 {
     justify-content: space-between; /* Espaçamento entre as tabelas */
     margin-top: 20px; /* Espaçamento superior */
     border: 1px solid #E6E6E6; /* Borda sutil */
-    border-radius: 8px; /* Bordas arredondadas */
+    border-radius: 4px; /* Bordas arredondadas */
     padding: 10px; /* Preenchimento interno da div2-principal */
 }
 
@@ -181,9 +181,11 @@ textarea {
 }
 
 .button-container {
-    display: flex; /* Usar flexbox na div dos botões */
-    justify-content: space-between; /* Espaçamento entre os botões */
-    margin-top: 20px; /* Espaçamento superior dos botões */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
 }
 
 button {

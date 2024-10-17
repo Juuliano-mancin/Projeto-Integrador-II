@@ -1,0 +1,222 @@
+/* Estilização básica da página */
+body {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    margin: 0px;
+    height: 100vh; /* Altura total da viewport */
+    padding: 0;
+    background-color: #f9f9f9; /* Fundo suave */
+    color: #333333; /* Texto principal */
+}
+
+header {
+    flex-direction: row;
+    justify-content: center; /* Alinha verticalmente os itens ao centro */
+   
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    padding: 10px 0; /* Espaçamento interno */
+    background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
+    color: #FFFFFF; /* Texto branco */
+}
+
+.header-container{
+    display: flex;
+    flex-direction: column;
+}
+/* DivA: duas subdivisões alinhadas lado a lado */
+.divA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+}
+
+
+h2, h3 {
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin: 0;
+}
+
+.divprincipal {
+    display: flex; /* Usar flexbox na div principal */
+    flex-direction: column; /* Direção em coluna */
+    padding: 20px; 
+  
+}
+
+.div1 {
+    display: flex; /* Usar flexbox na div1 */
+    flex-direction: column;
+    justify-content: space-between; /* Espaçamento entre os itens */
+    margin-bottom: 20px; /* Espaçamento inferior da div1 */
+    padding: 10px; 
+}
+
+/* Estilos para as subdivisões e a divB */
+.div1, .div2 {
+
+    padding: 10px 20px;
+    
+}
+.div2 img {
+    height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+.div1-principal {
+    display: flex; /* Usar flexbox na div1-principal */
+    flex-direction: row; /* Direção em linha */
+    justify-content: space-between; /* Espaçamento entre as seções */
+    margin-bottom: 20px; /* Espaçamento inferior da div1-principal */
+    border: 1px solid #E6E6E6; /* Borda sutil */
+    border-radius: 4px; /* Bordas arredondadas */
+    padding: 20px; /* Preenchimento interno da div1-principal */
+    margin-top: 20px;
+}
+
+.div2-principal {
+    display: flex; /* Usar flexbox na div2-principal */
+    flex-direction: row; /* Direção em linha */
+    justify-content: space-between; /* Espaçamento entre as tabelas */
+    margin-top: 20px; /* Espaçamento superior */
+    border: 1px solid #E6E6E6; /* Borda sutil */
+    border-radius: 4px; /* Bordas arredondadas */
+    padding: 10px; /* Preenchimento interno da div2-principal */
+}
+
+.field-container {
+    flex: 1; /* Permite que cada contêiner ocupe espaço igual */
+    margin-right: 10px; /* Margem à direita entre as seções */
+}
+
+.subdiv1, .subdiv2 {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-start; 
+    margin-top: 10px;
+    padding: 10px; 
+    border: 1px solid #E6E6E6; /* Borda sutil */
+    border-radius: 4px;
+}
+
+.subdiv1 div {
+    display: flex; 
+    flex-direction: column; /* Muda para coluna para empilhar rótulos e inputs */
+    margin-right: 20px; /* Espaçamento entre os itens */
+}
+
+.tabela-container {
+    flex: 1; /* Permite que cada tabela ocupe espaço igual */
+    margin-right: 10px; /* Espaçamento à direita entre as tabelas */
+    display: flex; /* Usar flexbox para alinhar conteúdo da tabela */
+    flex-direction: column; /* Direção em coluna */
+    
+}
+
+form {
+    margin-bottom: 20px; /* Espaçamento inferior do formulário */
+    border: 1px solid #E6E6E6; /* Borda ao redor do formulário */
+    padding: 15px; /* Preenchimento interno do formulário */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+fieldset {
+    border: 1px solid #E6E6E6; /* Borda do fieldset */
+    padding: 10px; /* Preenchimento interno do fieldset */
+    margin-bottom: 20px; /* Espaçamento inferior do fieldset */
+}
+
+legend {
+    font-weight: bold; /* Negrito para o título do fieldset */
+}
+
+table {
+    width: 100%; /* Largura total da tabela */
+    border-collapse: collapse; /* Colapsa bordas */
+    margin-bottom: 20px; /* Espaçamento inferior da tabela */
+}
+
+th, td {
+
+    border: 0px solid #E6E6E6; /* Borda das células da tabela */
+    padding: 10px; /* Preenchimento interno das células */
+    text-align: center; /* Alinhamento central do texto */
+    height: 35px; /* Altura fixa para as células */
+
+}
+
+.radio-container {
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 170px; 
+    padding: 5px; 
+}
+
+.label-radio {
+    width: 300px; 
+    margin-right: 5px; 
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select, input[type="date"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada; /* Borda sutil */
+    border-radius: 4px;
+    background-color: #FFFF; 
+    color: #666666; 
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.button-container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+button {
+    display: flex; /* Ativa o flexbox para o botão */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    padding: 10px 20px; /* Preenchimento interno dos botões */
+    margin: 5px; /* Margem ao redor dos botões */
+    font-size: 16px; 
+    border: 1px solid #B20000; /* Borda sutil */
+    border-radius: 4px; 
+    cursor: pointer; 
+    background-color:#B20000; /* Azul para o botão */
+    color: #f8f8f8; /* Texto branco */
+    transition: background-color 0.3s; /* Efeito de transição */
+}
+
+button:hover {
+    background-color: #7E0000; /* Cor ao passar o mouse */
+}
+
+thead{
+    text-align: center;
+}
+
+thead{
+    
+    background-color: #7E0000;
+    color: #f8f8f8;
+}
+
+.date_input{
+    padding-right: 30px;
+}

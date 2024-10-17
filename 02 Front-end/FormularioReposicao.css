@@ -9,17 +9,26 @@ body {
 }
 
 header {
-    display: flex; /* Usar flexbox */
-    flex-direction: row; /* Direção em linha */
-    align-items: center; /* Alinhar itens no eixo Y */
+    flex-direction: row;
     justify-content: center; /* Alinha verticalmente os itens ao centro */
-    position: fixed; /* Fixa o header no topo */
+   
     top: 0; /* Alinha ao topo */
     left: 0; /* Alinha à esquerda */
     width: 100%; /* Largura total */
     padding: 10px 0; /* Espaçamento interno */
     background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
     color: #FFFFFF; /* Texto branco */
+}
+
+.header-container{
+    display: flex;
+    flex-direction: column;
+}
+/* DivA: duas subdivisões alinhadas lado a lado */
+.divA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
 }
 
 
@@ -31,7 +40,8 @@ h2, h3 {
 .divprincipal {
     display: flex; /* Usar flexbox na div principal */
     flex-direction: column; /* Direção em coluna */
-    margin-top: 100px; /* Margem superior para não sobrepor o header */
+    padding: 20px; 
+  
 }
 
 .div1 {
@@ -42,6 +52,17 @@ h2, h3 {
     padding: 10px; 
 }
 
+/* Estilos para as subdivisões e a divB */
+.div1, .div2 {
+
+    padding: 10px 20px;
+    
+}
+.div2 img {
+    height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
 .div1-principal {
     display: flex; /* Usar flexbox na div1-principal */
     flex-direction: row; /* Direção em linha */
@@ -49,7 +70,8 @@ h2, h3 {
     margin-bottom: 20px; /* Espaçamento inferior da div1-principal */
     border: 1px solid #E6E6E6; /* Borda sutil */
     border-radius: 8px; /* Bordas arredondadas */
-    padding: 10px; /* Preenchimento interno da div1-principal */
+    padding: 20px; /* Preenchimento interno da div1-principal */
+    margin-top: 20px;
 }
 
 .div2-principal {
@@ -88,6 +110,7 @@ h2, h3 {
     margin-right: 10px; /* Espaçamento à direita entre as tabelas */
     display: flex; /* Usar flexbox para alinhar conteúdo da tabela */
     flex-direction: column; /* Direção em coluna */
+    
 }
 
 form {
@@ -98,7 +121,7 @@ form {
 }
 
 fieldset {
-    border: 1px solid #ccc; /* Borda do fieldset */
+    border: 1px solid #E6E6E6; /* Borda do fieldset */
     padding: 10px; /* Preenchimento interno do fieldset */
     margin-bottom: 20px; /* Espaçamento inferior do fieldset */
 }
@@ -114,16 +137,18 @@ table {
 }
 
 th, td {
-    border: 1px solid black; /* Borda das células da tabela */
+
+    border: 0px solid #E6E6E6; /* Borda das células da tabela */
     padding: 10px; /* Preenchimento interno das células */
     text-align: center; /* Alinhamento central do texto */
     height: 35px; /* Altura fixa para as células */
+
 }
 
 .radio-container {
     display: flex; 
     align-items: flex-start; 
-    margin-bottom: 10px; 
+    margin-bottom: 170px; 
     padding: 5px; 
 }
 
@@ -180,3 +205,16 @@ button:hover {
     background-color: #7E0000; /* Cor ao passar o mouse */
 }
 
+thead{
+    text-align: center;
+}
+
+thead{
+    
+    background-color: #7E0000;
+    color: #f8f8f8;
+}
+
+.date_input{
+    padding-right: 30px;
+}

@@ -15,7 +15,7 @@
             <div class="divA">
                 <div class="div1">
                     <h2>PORTAL JUSTIFICATIVA DE FALTAS</h2>
-                    <h3>Nova Requisição - Reposição de aulas</h3>
+                    <h3>Nova Requisição - Justificativa de Faltas</h3>
                 </div>
                 
                 <div class="div2">        
@@ -63,13 +63,10 @@
                 <table id="tabela1">
                     <thead>
                         <tr>
-                            <th colspan="2">Número de faltas</th>
+                            <th colspan="2">Ordem</th>
                             <th>Data Aula</th>
                             <th>Número Aulas</th>
                             <th>Disciplina</th>
-                            <th>Data Reposição</th>
-                            <th>Horário Início</th>
-                            <th>Horário Final</th>
                             
                         </tr>
                     </thead>
@@ -77,7 +74,7 @@
                         <tr>
                             <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
                             <td>1</td>
-                            <td class="date_input"><input type="date" name="data_aula_1" disabled></td>
+                            <td><input type="date" name="data_aula_1" disabled></td>
                             <td>
                                 <select name="numero_aulas_1" disabled>
                                     <option value="">Selecione número de aulas</option>
@@ -95,14 +92,11 @@
                                     <option value="3">Disciplina 3</option>
                                 </select>
                             </td>
-                            <td><input type="date" name="data_reposicao_1" disabled></td>
-                            <td><input type="time" name="horario_inicio_1" disabled></td>
-                            <td><input type="time" name="horario_final_1" disabled></td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
                             <td>2</td>
-                            <td class="date_input"><input type="date" name="data_aula_2" disabled></td>
+                            <td><input type="date" name="data_aula_2" disabled></td>
                             <td>
                                 <select name="numero_aulas_2" disabled>
                                     <option value="">Selecione número de aulas</option>
@@ -120,14 +114,11 @@
                                     <option value="3">Disciplina 3</option>
                                 </select>
                             </td>
-                            <td><input type="date" name="data_reposicao_1" disabled></td>
-                            <td><input type="time" name="horario_inicio_1" disabled></td>
-                            <td><input type="time" name="horario_final_1" disabled></td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
                             <td>3</td>
-                            <td class="date_input"><input type="date" name="data_aula_3" disabled></td>
+                            <td><input type="date" name="data_aula_3" disabled></td>
                             <td>
                                 <select name="numero_aulas_3" disabled>
                                     <option value="">Selecione número de aulas</option>
@@ -145,14 +136,11 @@
                                     <option value="3">Disciplina 3</option>
                                 </select>
                             </td>
-                            <td><input type="date" name="data_reposicao_1" disabled></td>
-                            <td><input type="time" name="horario_inicio_1" disabled></td>
-                            <td><input type="time" name="horario_final_1" disabled></td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
                             <td>4</td>
-                            <td class="date_input"><input type="date" name="data_aula_4" disabled></td>
+                            <td><input type="date" name="data_aula_4" disabled></td>
                             <td>
                                 <select name="numero_aulas_4" disabled>
                                     <option value="">Selecione número de aulas</option>
@@ -170,14 +158,11 @@
                                     <option value="3">Disciplina 3</option>
                                 </select>
                             </td>
-                            <td><input type="date" name="data_reposicao_1" disabled></td>
-                            <td><input type="time" name="horario_inicio_1" disabled></td>
-                            <td><input type="time" name="horario_final_1" disabled></td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
                             <td>5</td>
-                            <td class="date_input"><input type="date" name="data_aula_5" disabled></td>
+                            <td><input type="date" name="data_aula_5" disabled></td>
                             <td>
                                 <select name="numero_aulas_5" disabled>
                                     <option value="">Selecione número de aulas</option>
@@ -195,14 +180,11 @@
                                     <option value="3">Disciplina 3</option>
                                 </select>
                             </td>
-                            <td><input type="date" name="data_reposicao_1" disabled></td>
-                            <td><input type="time" name="horario_inicio_1" disabled></td>
-                            <td><input type="time" name="horario_final_1" disabled></td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
                             <td>6</td>
-                            <td class="date_input"><input type="date" name="data_aula_6" disabled></td>
+                            <td><input type="date" name="data_aula_6" disabled></td>
                             <td>
                                 <select name="numero_aulas_6" disabled>
                                     <option value="">Selecione número de aulas</option>
@@ -220,15 +202,62 @@
                                     <option value="3">Disciplina 3</option>
                                 </select>
                             </td>
-                            <td><input type="date" name="data_reposicao_1" disabled></td>
-                            <td><input type="time" name="horario_inicio_1" disabled></td>
-                            <td><input type="time" name="horario_final_1" disabled></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-       
+            <div class="tabela-container">
+              
+                <!-- Tabela 02 -->
+                <table id="tabela2">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Data Reposição</th>
+                            <th>Horário Início</th>
+                            <th>Horário Final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td><input type="date" name="data_reposicao_1" disabled></td>
+                            <td><input type="time" name="horario_inicio_1" disabled></td>
+                            <td><input type="time" name="horario_final_1" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td><input type="date" name="data_reposicao_2" disabled></td>
+                            <td><input type="time" name="horario_inicio_2" disabled></td>
+                            <td><input type="time" name="horario_final_2" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td><input type="date" name="data_reposicao_3" disabled></td>
+                            <td><input type="time" name="horario_inicio_3" disabled></td>
+                            <td><input type="time" name="horario_final_3" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td><input type="date" name="data_reposicao_4" disabled></td>
+                            <td><input type="time" name="horario_inicio_4" disabled></td>
+                            <td><input type="time" name="horario_final_4" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td><input type="date" name="data_reposicao_5" disabled></td>
+                            <td><input type="time" name="horario_inicio_5" disabled></td>
+                            <td><input type="time" name="horario_final_5" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td><input type="date" name="data_reposicao_6" disabled></td>
+                            <td><input type="time" name="horario_inicio_6" disabled></td>
+                            <td><input type="time" name="horario_final_6" disabled></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div>
             <button onclick="validateForm(event)">Enviar</button>

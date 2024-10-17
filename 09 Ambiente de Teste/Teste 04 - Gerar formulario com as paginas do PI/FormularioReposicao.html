@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="FormularioReposicao.css">
+    <script src="FormularioReposicao.js" defer></script>
+    <title>Reposição de aulas</title>
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+   
+            <div class="divA">
+                <div class="div1">
+                    <h2>PORTAL JUSTIFICATIVA DE FALTAS</h2>
+                    <h3>Nova Requisição - Reposição de aulas</h3>
+                </div>
+                
+                <div class="div2">        
+                    <img src="img/Logos_oficiais/logo_cps_versao_br.png" alt="Logo">
+                </div>
+        </div>
+    </header>
+
+    <div class="divprincipal">
+        <div class="div1-principal">
+            <div class="field-container">
+                <fieldset>
+                    <legend>Turno da Reposição:</legend>
+                    <label>
+                        <input type="radio" name="turno" value="manha"> Manhã
+                    </label>
+                    <label>
+                        <input type="radio" name="turno" value="tarde"> Tarde
+                    </label>
+                    <label>
+                        <input type="radio" name="turno" value="noite"> Noite
+                    </label>
+                </fieldset>
+            </div>
+
+            <div class="field-container">
+                <fieldset>
+                    <legend>Tipo de Reposição:</legend>
+                    <label>
+                        <input type="radio" name="tipo" value="aula"> Aula Ministrada
+                    </label>
+                    <label>
+                        <input type="radio" name="tipo" value="atividade"> Atividade
+                    </label>
+                    <label>
+                        <input type="radio" name="tipo" value="outros"> Outros
+                    </label>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="div2-principal">
+            <div class="tabela-container">
+                <!-- Tabela 01 -->
+                <table id="tabela1">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Número de faltas</th>
+                            <th>Data Aula</th>
+                            <th>Número Aulas</th>
+                            <th>Disciplina</th>
+                            <th>Data Reposição</th>
+                            <th>Horário Início</th>
+                            <th>Horário Final</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td>1</td>
+                            <td class="date_input"><input type="date" name="data_aula_1" disabled></td>
+                            <td>
+                                <select name="numero_aulas_1" disabled>
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_1" disabled>
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                            <td><input type="date" name="data_reposicao_1" disabled></td>
+                            <td><input type="time" name="horario_inicio_1" disabled></td>
+                            <td><input type="time" name="horario_final_1" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td>2</td>
+                            <td class="date_input"><input type="date" name="data_aula_2" disabled></td>
+                            <td>
+                                <select name="numero_aulas_2" disabled>
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_2" disabled>
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                            <td><input type="date" name="data_reposicao_1" disabled></td>
+                            <td><input type="time" name="horario_inicio_1" disabled></td>
+                            <td><input type="time" name="horario_final_1" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td>3</td>
+                            <td class="date_input"><input type="date" name="data_aula_3" disabled></td>
+                            <td>
+                                <select name="numero_aulas_3" disabled>
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_3" disabled>
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                            <td><input type="date" name="data_reposicao_1" disabled></td>
+                            <td><input type="time" name="horario_inicio_1" disabled></td>
+                            <td><input type="time" name="horario_final_1" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td>4</td>
+                            <td class="date_input"><input type="date" name="data_aula_4" disabled></td>
+                            <td>
+                                <select name="numero_aulas_4" disabled>
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_4" disabled>
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                            <td><input type="date" name="data_reposicao_1" disabled></td>
+                            <td><input type="time" name="horario_inicio_1" disabled></td>
+                            <td><input type="time" name="horario_final_1" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td>5</td>
+                            <td class="date_input"><input type="date" name="data_aula_5" disabled></td>
+                            <td>
+                                <select name="numero_aulas_5" disabled>
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_5" disabled>
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                            <td><input type="date" name="data_reposicao_1" disabled></td>
+                            <td><input type="time" name="horario_inicio_1" disabled></td>
+                            <td><input type="time" name="horario_final_1" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" onclick="toggleFields(this, this.closest('tr'))"></td>
+                            <td>6</td>
+                            <td class="date_input"><input type="date" name="data_aula_6" disabled></td>
+                            <td>
+                                <select name="numero_aulas_6" disabled>
+                                    <option value="">Selecione número de aulas</option>
+                                    <option value="1">01 Aula</option>
+                                    <option value="2">02 Aulas</option>
+                                    <option value="3">03 Aulas</option>
+                                    <option value="4">04 Aulas</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="disciplina_6" disabled>
+                                    <option value="">Selecione a disciplina</option>
+                                    <option value="1">Disciplina 1</option>
+                                    <option value="2">Disciplina 2</option>
+                                    <option value="3">Disciplina 3</option>
+                                </select>
+                            </td>
+                            <td><input type="date" name="data_reposicao_1" disabled></td>
+                            <td><input type="time" name="horario_inicio_1" disabled></td>
+                            <td><input type="time" name="horario_final_1" disabled></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+       
+        </div>
+        <div class="button-container">
+            <button type="button" onclick="saveReposicaoData(); window.location.href='DadosRequisicao.html';">
+                Enviar
+            </button>
+            
+            <script>
+                function saveReposicaoData() {
+                    const turno = document.querySelector('input[name="turno"]:checked')?.value || "";
+                    const tipo = document.querySelector('input[name="tipo"]:checked')?.value || "";
+            
+                    // Captura dos dados da tabela
+                    const reposicoes = [];
+                    document.querySelectorAll('#tabela1 tbody tr').forEach((row, index) => {
+                        if (row.querySelector('input[type="checkbox"]').checked) {
+                            const dataAula = row.querySelector('input[name="data_aula_' + (index + 1) + '"]').value;
+                            const numeroAulas = row.querySelector('select[name="numero_aulas_' + (index + 1) + '"]').value;
+                            const disciplina = row.querySelector('select[name="disciplina_' + (index + 1) + '"]').value;
+                            const dataReposicao = row.querySelector('input[name="data_reposicao_' + (index + 1) + '"]').value;
+                            const horarioInicio = row.querySelector('input[name="horario_inicio_' + (index + 1) + '"]').value;
+                            const horarioFinal = row.querySelector('input[name="horario_final_' + (index + 1) + '"]').value;
+                            reposicoes.push({ dataAula, numeroAulas, disciplina, dataReposicao, horarioInicio, horarioFinal });
+                        }
+                    });
+            
+                    const reposicaoData = { turno, tipo, reposicoes };
+                    localStorage.setItem('reposicaoData', JSON.stringify(reposicaoData));
+                }
+            </script>
+            
+        </div>
+    </div>
+</body>
+</html>

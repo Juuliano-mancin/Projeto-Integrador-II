@@ -37,34 +37,37 @@ function gerarPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // Coleta os dados do LocalStorage
-    const requisicaoData = JSON.parse(localStorage.getItem('requisicaoData'));
-    const reposicaoData = JSON.parse(localStorage.getItem('reposicaoData'));
+    // Adiciona o cabeçalho
+    doc.setFontSize(16);
+    doc.text("FACULDADE DE TECNOLOGIA (FATEC)", 10, 10);
+    doc.setFontSize(12);
+    doc.text("PORTAL JUSTIFICATIVA DE FALTAS", 10, 15);
+    doc.text("Documento Oficial", 10, 20);
+    doc.setLineWidth(0.5);
+    doc.line(10, 25, 200, 25); // Linha horizontal
 
     // Título do documento
-    doc.setFontSize(18);
-    doc.text("Dados da Requisição e Reposição de Aulas", 10, 10);
+    doc.setFontSize(14);
+    doc.text("Dados da Requisição e Reposição de Aulas", 10, 35);
 
     // Seção 1: Dados da Requisição de Faltas
+    const requisicaoData = JSON.parse(localStorage.getItem('requisicaoData'));
     if (requisicaoData) {
-        doc.setFontSize(14);
-        doc.text("Dados da Justificativa de Faltas", 10, 20);
-
         doc.setFontSize(12);
-        doc.text(`Curso: ${requisicaoData.curso}`, 10, 30);
-        doc.text(`Data Inicial: ${requisicaoData.dataInicial}`, 10, 40);
-        doc.text(`Data Final: ${requisicaoData.dataFinal}`, 10, 50);
-        doc.text(`Justificativa: ${requisicaoData.justificativa}`, 10, 60);
-        doc.text(`Comentários: ${requisicaoData.comentarios}`, 10, 70);
+        doc.text("Dados da Justificativa de Faltas", 10, 45);
+        doc.text(`Curso: ${requisicaoData.curso}`, 10, 55);
+        doc.text(`Data Inicial: ${requisicaoData.dataInicial}`, 10, 60);
+        doc.text(`Data Final: ${requisicaoData.dataFinal}`, 10, 65);
+        doc.text(`Justificativa: ${requisicaoData.justificativa}`, 10, 70);
+        doc.text(`Comentários: ${requisicaoData.comentarios}`, 10, 75);
     }
 
     // Seção 2: Dados da Reposição de Aulas
+    const reposicaoData = JSON.parse(localStorage.getItem('reposicaoData'));
     if (reposicaoData) {
-        doc.setFontSize(14);
-        doc.text("Dados da Reposição de Aulas", 10, 80);
-
         doc.setFontSize(12);
-        doc.text(`Turno: ${reposicaoData.turno}`, 10, 90);
+        doc.text("Dados da Reposição de Aulas", 10, 85);
+        doc.text(`Turno: ${reposicaoData.turno}`, 10, 95);
         doc.text(`Tipo de Reposição: ${reposicaoData.tipo}`, 10, 100);
 
         // Listar todas as reposições
@@ -80,9 +83,16 @@ function gerarPDF() {
         });
     }
 
+    // Adiciona um rodapé
+    doc.setFontSize(10);
+    doc.setTextColor(150);
+    doc.text("Este documento é gerado eletronicamente e não requer assinatura.", 10, 280);
+    doc.setTextColor(0); // Reseta a cor do texto
+
     // Baixar o PDF
     doc.save("dados_requisicao_reposicao.pdf");
 }
+
 
 // Carregar os dados ao iniciar a página
 window.onload = loadData;

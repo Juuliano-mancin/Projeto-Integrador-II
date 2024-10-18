@@ -5,35 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados da Requisição</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dadosRequisicao.css"> <!-- Link para o CSS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="dadosRequisicao.js" defer></script> <!-- Referência ao arquivo JavaScript -->
+    <script src="dadosRequisicao.js" defer></script> <!-- Link para o JavaScript -->
 </head>
 <body>
     <header>
         <h2>Dados da Requisição e Reposição</h2>
     </header>
 
-    <main>
-        <div id="dados-requisicao">
-            <h3>Dados da Justificativa de Faltas</h3>
-            <p><strong>Curso:</strong> <span id="curso"></span></p>
-            <p><strong>Data Inicial:</strong> <span id="data-inicial"></span></p>
-            <p><strong>Data Final:</strong> <span id="data-final"></span></p>
-            <p><strong>Justificativa:</strong> <span id="justificativa"></span></p>
-            <p><strong>Comentários:</strong> <span id="comentarios"></span></p>
+    <main class="main-container">
+        <div class="divPrincipal">
+            <div id="dados-requisicao">
+                <h3>Dados da Justificativa de Faltas</h3>
+                <p><strong>Curso:</strong> <span id="curso"></span></p>
+                <p><strong>Data Inicial:</strong> <span id="data-inicial"></span></p>
+                <p><strong>Data Final:</strong> <span id="data-final"></span></p>
+                <p><strong>Justificativa:</strong> <span id="justificativa"></span></p>
+                <p><strong>Comentários:</strong> <span id="comentarios"></span></p>
+            </div>
+
+            <div id="dados-reposicao">
+                <h3>Dados da Reposição de Aulas</h3>
+                <p><strong>Turno:</strong> <span id="turno"></span></p>
+                <p><strong>Tipo de Reposição:</strong> <span id="tipo"></span></p>
+
+                <h4>Detalhes das Reposições:</h4>
+                <div id="reposicoes"></div>
+            </div>
+
+            <div class="footer">
+                <button onclick="gerarPDF()">Baixar PDF</button>
+            </div>
         </div>
-
-        <div id="dados-reposicao">
-            <h3>Dados da Reposição de Aulas</h3>
-            <p><strong>Turno:</strong> <span id="turno"></span></p>
-            <p><strong>Tipo de Reposição:</strong> <span id="tipo"></span></p>
-
-            <h4>Detalhes das Reposições:</h4>
-            <div id="reposicoes"></div>
-        </div>
-
-        <!-- Botão para gerar PDF -->
-        <button onclick="gerarPDF()">Baixar PDF</button>
     </main>
 </body>
 </html>

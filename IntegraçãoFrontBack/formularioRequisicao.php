@@ -90,7 +90,7 @@ $stmtJustificativas->close(); // Fecha o statement de justificativas
     </header>
     <br /><br />
     <main>
-        <form method="POST" action="processar_requisicao.php"> <!-- Define o método e ação do formulário -->
+        <form method="POST" action="processar_requisicao.php" enctype="multipart/form-data"> <!-- Define o método e ação do formulário -->
             <div class="divPrincipal">
                 <div class="div1">
                     <div> Nome Professor: <?php echo $nomeProfessor; ?></div>
@@ -200,7 +200,7 @@ $stmtJustificativas->close(); // Fecha o statement de justificativas
                     </div>
 
                     <div class="button-container">
-                        <input type="file" id="input-file" name="input-file" style="display:none;">
+                    <input type="file" id="input-file" name="input-file" aria-label="Upload de Documento" required>
                         <button type="button" id="upload-documento" aria-label="Upload de Documento">
                             <img src="img/Icones/ArquivoUpload.svg" alt="Ícone de upload" style="width: 20px; height: 20px; margin-right: 5px;">
                             Upload de Documento

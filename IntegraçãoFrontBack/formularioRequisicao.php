@@ -37,24 +37,27 @@ $stmtCursos->close(); // Fecha a declaração
 
 // Buscando as categorias de faltas
 $categorias = [];
-$stmtCategorias = $conexao->prepare("SELECT idcategoria, categoria FROM tb_categoria_faltas");
+$stmtCategorias = $conexao->prepare("SELECT idcategoria, codcategoria, categoria FROM tb_categoria_faltas");
 $stmtCategorias->execute();
-$stmtCategorias->bind_result($idCategoria, $nomeCategoria);
+$stmtCategorias->bind_result($idCategoria, $codCategoria, $nomeCategoria);
 
 while ($stmtCategorias->fetch()) {
-    $categorias[$idCategoria] = ['id' => $idCategoria, 'nome' => $nomeCategoria, 'justificativas' => []];
+    $categorias[$codCategoria] = ['id' => $idCategoria, 'nome' => $nomeCategoria, 'justificativas' => []];
 }
 $stmtCategorias->close(); // Fecha o statement de categorias
 
 // Obtendo todas as justificativas de uma vez
 $stmtJustificativas = $conexao->prepare("SELECT idjustificativa, justificativa, codcategoria FROM tb_justificativa_faltas");
 $stmtJustificativas->execute();
-$stmtJustificativas->bind_result($idJustificativa, $descricaoJustificativa, $idCategoria);
+$stmtJustificativas->bind_result($idJustificativa, $descricaoJustificativa, $codCategoria);
 
 // Agrupando as justificativas em suas respectivas categorias
 while ($stmtJustificativas->fetch()) {
-    if (isset($categorias[$idCategoria])) {
-        $categorias[$idCategoria]['justificativas'][] = ['id' => $idJustificativa, 'descricao' => $descricaoJustificativa];
+    if (isset($categorias[$codCategoria])) {
+        $categorias[$codCategoria]['justificativas'][] = [
+            'idjustificativa' => $idJustificativa, 
+            'descricao' => $descricaoJustificativa
+        ];
     }
 }
 $stmtJustificativas->close(); // Fecha o statement de justificativas
@@ -117,57 +120,72 @@ $stmtJustificativas->close(); // Fecha o statement de justificativas
                         </div>
                     </div>
                     <div class="subdiv2">
-                        <div class="nova-div1">
+                    <div class="nova-div1">
+                            <!-- Dropdown para Licença e Falta Médica -->
                             <div class="radio-container" id="licenca-falta">
-                                <input type="radio" id="licenca-falta-radio" name="justificativa" aria-label="Licença e Falta médica">
-                                <label class="label-radio" for="licenca-falta-radio">01 Licença e Falta médica</label>
+                                <input type="radio" id="licenca-falta-radio" name="justificativa" aria-label="<?php echo htmlspecialchars($categorias['Cat01']['nome']); ?>">
+                                <label class="label-radio" for="licenca-falta-radio">
+                                    <?php echo htmlspecialchars($categorias['Cat01']['id']) . " " . htmlspecialchars($categorias['Cat01']['nome']); ?>
+                                </label>
                                 <select id="justificativa1" name="justificativa1" aria-label="Justificativa 1" required>
                                     <option value="">Selecione a justificativa</option>
-                                    <?php if (isset($categorias[1]['justificativas'])): ?>
-                                        <?php foreach ($categorias[1]['justificativas'] as $justificativa): ?>
-                                            <option value="<?php echo htmlspecialchars($justificativa['id']); ?>">
+                                    <?php if (isset($categorias['Cat01']['justificativas'])): ?>
+                                        <?php foreach ($categorias['Cat01']['justificativas'] as $justificativa): ?>
+                                            <option value="<?php echo htmlspecialchars($justificativa['idjustificativa']); ?>">
                                                 <?php echo htmlspecialchars($justificativa['descricao']); ?>
                                             </option>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </select>
                             </div>
+                            
+                            <!-- Dropdown para Faltas Injustificadas -->
                             <div class="radio-container" id="faltas-injustificadas">
-                                <input type="radio" id="faltas-injustificadas-radio" name="justificativa" aria-label="Faltas Injustificadas">
-                                <label class="label-radio" for="faltas-injustificadas-radio">02 Faltas Injustificadas</label>
+                                <input type="radio" id="faltas-injustificadas-radio" name="justificativa" aria-label="<?php echo htmlspecialchars($categorias['Cat02']['nome']); ?>">
+                                <label class="label-radio" for="faltas-injustificadas-radio">
+                                    <?php echo htmlspecialchars($categorias['Cat02']['id']) . " " . htmlspecialchars($categorias['Cat02']['nome']); ?>
+                                </label>
                                 <select id="justificativa2" name="justificativa2" aria-label="Justificativa 2" required>
                                     <option value="">Selecione a justificativa</option>
-                                    <?php if (isset($categorias[2]['justificativas'])): ?>
-                                        <?php foreach ($categorias[2]['justificativas'] as $justificativa): ?>
-                                            <option value="<?php echo htmlspecialchars($justificativa['id']); ?>">
+                                    <?php if (isset($categorias['Cat02']['justificativas'])): ?>
+                                        <?php foreach ($categorias['Cat02']['justificativas'] as $justificativa): ?>
+                                            <option value="<?php echo htmlspecialchars($justificativa['idjustificativa']); ?>">
                                                 <?php echo htmlspecialchars($justificativa['descricao']); ?>
                                             </option>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </select>
                             </div>
+
+                            <!-- Dropdown para Faltas Justificadas -->
                             <div class="radio-container" id="faltas-justificadas">
-                                <input type="radio" id="faltas-justificadas-radio" name="justificativa" aria-label="Faltas Justificadas">
-                                <label class="label-radio" for="faltas-justificadas-radio">03 Faltas Justificadas</label>
+                                <input type="radio" id="faltas-justificadas-radio" name="justificativa" aria-label="<?php echo htmlspecialchars($categorias['Cat03']['nome']); ?>">
+                                <label class="label-radio" for="faltas-justificadas-radio">
+                                    <?php echo htmlspecialchars($categorias['Cat03']['id']) . " " . htmlspecialchars($categorias['Cat03']['nome']); ?>
+                                </label>
                                 <select id="justificativa3" name="justificativa3" aria-label="Justificativa 3" required>
                                     <option value="">Selecione a justificativa</option>
-                                    <?php if (isset($categorias[3]['justificativas'])): ?>
-                                        <?php foreach ($categorias[3]['justificativas'] as $justificativa): ?>
-                                            <option value="<?php echo htmlspecialchars($justificativa['id']); ?>">
+                                    <?php if (isset($categorias['Cat03']['justificativas'])): ?>
+                                        <?php foreach ($categorias['Cat03']['justificativas'] as $justificativa): ?>
+                                            <option value="<?php echo htmlspecialchars($justificativa['idjustificativa']); ?>">
                                                 <?php echo htmlspecialchars($justificativa['descricao']); ?>
                                             </option>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </select>
                             </div>
+
+                            <!-- Dropdown para Faltas Previstas na Legislação -->
                             <div class="radio-container" id="faltas-previstas">
-                                <input type="radio" id="faltas-previstas-radio" name="justificativa" aria-label="Faltas Previstas em Lei">
-                                <label class="label-radio" for="faltas-previstas-radio">04 Faltas Previstas em Lei</label>
+                                <input type="radio" id="faltas-previstas-radio" name="justificativa" aria-label="<?php echo htmlspecialchars($categorias['Cat04']['nome']); ?>">
+                                <label class="label-radio" for="faltas-previstas-radio">
+                                    <?php echo htmlspecialchars($categorias['Cat04']['id']) . " " . htmlspecialchars($categorias['Cat04']['nome']); ?>
+                                </label>
                                 <select id="justificativa4" name="justificativa4" aria-label="Justificativa 4" required>
                                     <option value="">Selecione a justificativa</option>
-                                    <?php if (isset($categorias[4]['justificativas'])): ?>
-                                        <?php foreach ($categorias[4]['justificativas'] as $justificativa): ?>
-                                            <option value="<?php echo htmlspecialchars($justificativa['id']); ?>">
+                                    <?php if (isset($categorias['Cat04']['justificativas'])): ?>
+                                        <?php foreach ($categorias['Cat04']['justificativas'] as $justificativa): ?>
+                                            <option value="<?php echo htmlspecialchars($justificativa['idjustificativa']); ?>">
                                                 <?php echo htmlspecialchars($justificativa['descricao']); ?>
                                             </option>
                                         <?php endforeach; ?>
@@ -175,10 +193,12 @@ $stmtJustificativas->close(); // Fecha o statement de justificativas
                                 </select>
                             </div>
                         </div>
+
                         <div class="nova-div2">
                             <textarea id="comentarios" name="comentarios" rows="10" placeholder="Complemente aqui a sua justificativa de falta"></textarea>
                         </div>
                     </div>
+
                     <div class="button-container">
                         <input type="file" id="input-file" name="input-file" style="display:none;">
                         <button type="button" id="upload-documento" aria-label="Upload de Documento">
@@ -194,6 +214,7 @@ $stmtJustificativas->close(); // Fecha o statement de justificativas
 
     <!-- Importa o arquivo JavaScript -->
     <script src="FormularioRequisicao.js"></script>
+
 </body>
 </html>
 

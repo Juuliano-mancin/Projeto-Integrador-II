@@ -42,7 +42,7 @@ if (!isset($_SESSION['nome']) || !isset($_SESSION['sobrenome'])) {
             </div>
             <!-- SubDiv2 - Botão "Nova Solicitação" com ícone -->
             <div class="subDiv2">
-                <a href="formularioRequisicao.html">
+                <a href="formularioRequisicao.php">
                     <button class="imprimirBtn"> 
                         <img src="img/icones/NovaSolicitacao.svg" alt="Adicionar" class="icon"> <!-- Ícone de adicionar --> 
                         Nova Solicitação

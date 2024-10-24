@@ -1,9 +1,10 @@
+
 /* Aplicação da fonte principal Roboto no corpo da página */
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 20px; /* Altura da linha ajustada em múltiplos de 4px */
-    color: #333; /* Cor padrão do texto */
+    color: #666666; /* Cor padrão do texto */
 }
 
 /* Estilo da div principal */
@@ -38,7 +39,7 @@ body {
     font-size: 24px;
     font-weight: 500; /* Peso semibold para destaque */
     margin: 0;
-    color: black;
+    color: #666666;
 }
 
 /* Estilo do subtítulo, usando Roboto */
@@ -92,14 +93,14 @@ input[type="submit"]:hover {
 
 /* Estilo dos rótulos */
 label {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;           /* Fonte Roboto para rótulos */
     font-size: 20px;
-    font-weight: 400;
+    color: #666666;                             /* Aumenta levemente a fonte dos rótulos */
 }
 
 /* Estilo dos campos de texto e senha */
 input[type="text"], input[type="password"] {
-    border: 1px solid #B0B0B0;
+    border: 1px solid #DADADA;
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;

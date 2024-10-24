@@ -90,7 +90,7 @@ $conexao->close(); // Fechando a conexão
         <br><br> <!-- Quebras de linha para espaçamento -->
 
         <p>Esqueceu sua senha?<br> <!-- Texto informativo sobre recuperação de senha -->
-        Solicite uma nova senha <a href="novasenha.html">aqui</a>!</p> <!-- Link para solicitar nova senha -->
+        Solicite uma nova senha <a href="novasenha.php">aqui</a>!</p> <!-- Link para solicitar nova senha -->
     </div>
 
 </body>

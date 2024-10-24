@@ -55,7 +55,7 @@ $conexao->close(); // Fechando a conexão
 <body>
 
 <div class="principal">
-    <div class="login-text">
+    <div class="senha-text">
         <p class="titulo">Solicitar Nova Senha</p>
         <p class="subtitulo">Digite sua matrícula e a nova senha</p>
     </div>
@@ -65,13 +65,22 @@ $conexao->close(); // Fechando a conexão
     <?php endif; ?>
 
     <form action="novasenha.php" method="POST">
-        <label for="matricula">Matrícula</label><br>
+        <label for="matricula">
+            <img src="img/Icones/user_verm.svg" alt="Ícone de Login" class="icon">
+            Matrícula
+        </label><br>
         <input type="text" id="matricula" name="matricula" placeholder="Digite sua matrícula" required><br><br>
 
-        <label for="nova-senha">Nova Senha</label><br>
+        <label for="nova-senha">
+            <img src="img/Icones/novasenha_verm.svg" alt="Ícone de Login" class="icon">
+            Nova Senha
+        </label><br>
         <input type="password" id="nova-senha" name="nova-senha" placeholder="Nova Senha" required><br><br>
 
-        <label for="confirmar-senha">Confirmar Senha</label><br>
+        <label for="confirmar-senha">
+            <img src="img/Icones/novasenha_verm.svg" alt="Ícone de Login" class="icon">
+            Confirmar Senha
+        </label><br>
         <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirmar Senha" required><br><br>
 
         <input type="submit" value="Atualizar Senha">

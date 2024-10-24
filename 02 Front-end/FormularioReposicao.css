@@ -1,3 +1,6 @@
+/* Inclusão das fontes conforme o Guia de Estilo CPS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;500&display=swap');
+
 /* Estilização básica da página */
 body {
     font-family: 'Roboto', sans-serif; /* Texto geral */
@@ -5,7 +8,7 @@ body {
     height: 100vh; /* Altura total da viewport */
     padding: 0;
     background-color: #f9f9f9; /* Fundo suave */
-    color: #333333; /* Texto principal */
+    color: #666666; /* Texto principal */
 }
 
 header {
@@ -39,12 +42,10 @@ h2, h3 {
 
 .divprincipal {
     display: flex; /* Usar flexbox na div principal */
-    flex-direction: column; /* Direção em coluna */
-    padding: 20px; 
-  
+    flex-direction: column; /* Direção em coluna */  
 }
 
-.div1 {
+.subDiv1 {
     display: flex; /* Usar flexbox na div1 */
     flex-direction: column;
     justify-content: space-between; /* Espaçamento entre os itens */
@@ -53,12 +54,12 @@ h2, h3 {
 }
 
 /* Estilos para as subdivisões e a divB */
-.div1, .div2 {
+.subDiv1, .subDiv2 {
 
     padding: 10px 20px;
     
 }
-.div2 img {
+.subDiv2 img {
     height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */
     width: auto; /* Mantém a proporção da imagem */
 }
@@ -67,11 +68,11 @@ h2, h3 {
     display: flex; /* Usar flexbox na div1-principal */
     flex-direction: row; /* Direção em linha */
     justify-content: space-between; /* Espaçamento entre as seções */
-    margin-bottom: 20px; /* Espaçamento inferior da div1-principal */
+   
     border: 1px solid #E6E6E6; /* Borda sutil */
     border-radius: 4px; /* Bordas arredondadas */
     padding: 20px; /* Preenchimento interno da div1-principal */
-    margin-top: 20px;
+   
 }
 
 .div2-principal {
@@ -115,7 +116,7 @@ h2, h3 {
 
 form {
     margin-bottom: 20px; /* Espaçamento inferior do formulário */
-    border: 1px solid #E6E6E6; /* Borda ao redor do formulário */
+  
     padding: 15px; /* Preenchimento interno do formulário */
     border-radius: 5px; /* Bordas arredondadas */
 }

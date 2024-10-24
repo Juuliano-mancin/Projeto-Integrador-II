@@ -1,10 +1,37 @@
+/* Inclusão das fontes conforme o Guia de Estilo CPS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;500&display=swap');
+
 body {
     font-family: 'Roboto', sans-serif; /* Texto geral */
     margin: 0px;
     height: 100vh; /* Altura total da viewport */
     padding: 0;
     background-color: #f9f9f9; /* Fundo suave */
-    color: #333333; /* Texto principal */
+    color: #666666; /* Texto principal */
+}
+
+header {
+    flex-direction: row;
+    justify-content: center; /* Alinha verticalmente os itens ao centro */
+   
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    padding: 10px 0; /* Espaçamento interno */
+    background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
+    color: #FFFFFF; /* Texto branco */
+    
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
+}
+
+/* DivA: duas subdivisões alinhadas lado a lado */
+.divA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
 }
 
 h2, h3 {
@@ -18,7 +45,7 @@ h2, h3 {
     border: 1px solid #E6E6E6; /* Borda sutil */
     border-radius: 8px;
     padding: 20px; 
-    margin: 100px auto 0; /* Margem superior para não sobrepor o header */
+ 
 }
 
 .div1 {
@@ -119,28 +146,6 @@ button:hover {
     background-color: #7E0000; /* Cor ao passar o mouse */
 }
 
-header {
-    flex-direction: row;
-    justify-content: center; /* Alinha verticalmente os itens ao centro */
-    position: fixed; /* Fixa o header no topo */
-    top: 0; /* Alinha ao topo */
-    left: 0; /* Alinha à esquerda */
-    width: 100%; /* Largura total */
-    padding: 10px 0; /* Espaçamento interno */
-    background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
-    color: #FFFFFF; /* Texto branco */
-    
-}
-.principal {
-    display: flex;
-    flex-direction: column;
-}
-/* DivA: duas subdivisões alinhadas lado a lado */
-.divA {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Distribui espaço entre os elementos */
-}
 
 /* Estilos para as subdivisões e a divB */
 .subDiv1, .subDiv2 {
@@ -151,4 +156,21 @@ header {
 .subDiv2 img {
     height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */
     width: auto; /* Mantém a proporção da imagem */
+}
+
+form {
+    margin-bottom: 20px; /* Espaçamento inferior do formulário */
+    
+    padding: 15px; /* Preenchimento interno do formulário */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+.div1-principal {
+    display: flex; /* Usar flexbox na div1-principal */
+    flex-direction: row; /* Direção em linha */
+    justify-content: space-between; /* Espaçamento entre as seções */
+    margin-bottom: 20px; /* Espaçamento inferior da div1-principal */
+
+    border-radius: 4px; /* Bordas arredondadas */
+    padding: 20px; /* Preenchimento interno da div1-principal */
+    margin-top: 20px;
 }

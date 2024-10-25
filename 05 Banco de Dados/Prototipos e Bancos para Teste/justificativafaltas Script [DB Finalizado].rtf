@@ -1,0 +1,184 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 -- Cria\'e7\'e3o do banco de dados\par
+CREATE DATABASE justificativafaltas;\par
+USE justificativafaltas;\par
+\par
+-- Cria\'e7\'e3o da tabela tb_professores\par
+CREATE TABLE tb_professores (\par
+    idprofessor INT AUTO_INCREMENT PRIMARY KEY,\par
+    nome VARCHAR(255) NOT NULL,\par
+    sobrenome VARCHAR(255) NOT NULL,\par
+    matricula INT UNIQUE NOT NULL,\par
+    emailinstitucional VARCHAR(255) UNIQUE NOT NULL,\par
+    senha VARCHAR(255) NOT NULL,\par
+    Funcao ENUM('Professor', 'Administrativo', 'Coordenacao') NOT NULL\par
+);\par
+\par
+-- Inser\'e7\'e3o de dados na tabela tb_professores\par
+INSERT INTO tb_professores (nome, sobrenome, matricula, emailinstitucional, senha, Funcao)\par
+VALUES \par
+('Jo\'e3o', 'Silva', 1001, 'joao.silva@fatec.sp.gov.br', 'fatecitapira', 'Administrativo'),\par
+('Maria', 'Souza', 1002, 'maria.souza@fatec.sp.gov.br', 'fatecitapira', 'Administrativo'),\par
+('Carlos', 'Pereira', 1003, 'carlos.pereira@fatec.sp.gov.br', 'fatecitapira', 'Administrativo'),\par
+('Ana', 'Oliveira', 1004, 'ana.oliveira@fatec.sp.gov.br', 'fatecitapira', 'Coordenacao'),\par
+('Fernanda', 'Lima', 1005, 'fernanda.lima@fatec.sp.gov.br', 'fatecitapira', 'Coordenacao'),\par
+('Bruno', 'Santos', 1006, 'bruno.santos@fatec.sp.gov.br', 'fatecitapira', 'Professor'),\par
+('Tatiane', 'Almeida', 1007, 'tatiane.almeida@fatec.sp.gov.br', 'fatecitapira', 'Professor'),\par
+('Ricardo', 'Cunha', 1008, 'ricardo.cunha@fatec.sp.gov.br', 'fatecitapira', 'Professor'),\par
+('Juliana', 'Ribeiro', 1009, 'juliana.ribeiro@fatec.sp.gov.br', 'fatecitapira', 'Professor'),\par
+('Renato', 'Macedo', 1010, 'renato.macedo@fatec.sp.gov.br', 'fatecitapira', 'Professor');\par
+\par
+-- Cria\'e7\'e3o da tabela tb_cursos\par
+CREATE TABLE tb_cursos (\par
+    idcurso INT AUTO_INCREMENT PRIMARY KEY,\par
+    curso VARCHAR(255) NOT NULL,\par
+    siglacurso VARCHAR(10) NOT NULL UNIQUE\par
+);\par
+\par
+-- Inser\'e7\'e3o de dados na tabela tb_cursos\par
+INSERT INTO tb_cursos (curso, siglacurso)\par
+VALUES \par
+('Desenvolvimento Software Multiplataforma', 'DSM'),\par
+('Gest\'e3o da Produ\'e7\'e3o Industrial', 'GPI'),\par
+('Gest\'e3o Industrial', 'GE');\par
+\par
+-- Cria\'e7\'e3o da tabela tb_disciplinas\par
+CREATE TABLE tb_disciplinas (\par
+    iddisciplina INT AUTO_INCREMENT PRIMARY KEY,\par
+    disciplina VARCHAR(255) NOT NULL,\par
+    siglacurso VARCHAR(10),\par
+    FOREIGN KEY (siglacurso) REFERENCES tb_cursos(siglacurso)\par
+);\par
+\par
+-- Inser\'e7\'e3o de dados na tabela tb_disciplinas\par
+INSERT INTO tb_disciplinas (disciplina, siglacurso)\par
+VALUES \par
+('Sistemas Operacionais', 'DSM'),\par
+('Redes de Computadores', 'DSM'),\par
+('Design Digital', 'DSM'),\par
+('Algoritmo e L\'f3gica de Programa\'e7\'e3o', 'DSM'),\par
+('Desenvolvimento Web I', 'DSM'),\par
+('Modelagem de Banco de Dados', 'DSM'),\par
+('Engenharia de Softwares I', 'DSM'),\par
+('Banco de Dados Relacional', 'DSM'),\par
+('Engenharia de Softwares II', 'DSM'),\par
+('Matem\'e1tica para Computa\'e7\'e3o', 'DSM'),\par
+('Desenvolvimento Web II', 'DSM'),\par
+('T\'e9cnicas de Programa\'e7\'e3o', 'DSM'),\par
+('Estrutura de Dados', 'DSM'),\par
+('Fundamentos de Administra\'e7\'e3o', 'GE'),\par
+('Log\'edstica e Cadeia de Suprimentos', 'GE'),\par
+('Gest\'e3o de Projetos', 'GE'),\par
+('Qualidade Total', 'GE'),\par
+('Processos de Produ\'e7\'e3o', 'GPI'),\par
+('Planejamento e Controle da Produ\'e7\'e3o', 'GPI'),\par
+('Ergonomia e Seguran\'e7a do Trabalho', 'GPI'),\par
+('Administra\'e7\'e3o da Produ\'e7\'e3o', 'GPI');\par
+\par
+-- Cria\'e7\'e3o da tabela tb_categoria_faltas\par
+CREATE TABLE tb_categoria_faltas (\par
+    idcategoria INT AUTO_INCREMENT PRIMARY KEY,\par
+    codcategoria VARCHAR(10) NOT NULL UNIQUE,\par
+    categoria VARCHAR(255) NOT NULL\par
+);\par
+\par
+-- Inser\'e7\'e3o de dados na tabela tb_categoria_faltas\par
+INSERT INTO tb_categoria_faltas (codcategoria, categoria)\par
+VALUES \par
+('Cat01', 'Licen\'e7a e Falta M\'e9dica'),\par
+('Cat02', 'Falta Injustificada'),\par
+('Cat03', 'Falta Justificada'),\par
+('Cat04', 'Faltas Previstas na Legisla\'e7\'e3o Trabalhista');\par
+\par
+-- Cria\'e7\'e3o da tabela tb_justificativa_faltas\par
+CREATE TABLE tb_justificativa_faltas (\par
+    idjustificativa INT AUTO_INCREMENT PRIMARY KEY,\par
+    justificativa VARCHAR(255) NOT NULL,\par
+    codcategoria VARCHAR(10),\par
+    FOREIGN KEY (codcategoria) REFERENCES tb_categoria_faltas(codcategoria)\par
+);\par
+\par
+-- Inser\'e7\'e3o de dados na tabela tb_justificativa_faltas\par
+INSERT INTO tb_justificativa_faltas (justificativa, codcategoria)\par
+VALUES \par
+('Falta M\'e9dica', 'Cat01'),\par
+('Comparecimento ao M\'e9dico', 'Cat01'),\par
+('Licen\'e7a-Sa\'fade', 'Cat01'),\par
+('Licen\'e7a-Maternidade', 'Cat01'),\par
+('Atraso ou Sa\'edda Antecipada', 'Cat02'),\par
+('Atraso ou Sa\'edda Antecipada', 'Cat03'),\par
+('Falecimento de c\'f4njuge, pai, m\'e3e, filho.', 'Cat04'),\par
+('Falecimento ascendente, descendente, irm\'e3o ou pessoa dependente.', 'Cat04'),\par
+('Casamento', 'Cat04'),\par
+('Nascimento de filho', 'Cat04'),\par
+('Acompanhar esposa em consultas m\'e9dicas', 'Cat04'),\par
+('Acompanhar filho em consulta m\'e9dica', 'Cat04'),\par
+('Doa\'e7\'e3o volunt\'e1ria de sangue', 'Cat04'),\par
+('Alistamento como eleitor', 'Cat04'),\par
+('Convoca\'e7\'e3o para depoimento judicial', 'Cat04'),\par
+('Comparecimento como jurado no Tribunal do J\'fari', 'Cat04'),\par
+('Convoca\'e7\'e3o para servi\'e7o eleitoral', 'Cat04'),\par
+('Dispensa por nomea\'e7\'e3o para mesas receptoras nas elei\'e7\'f5es', 'Cat04'),\par
+('Realiza\'e7\'e3o de Prova de Vestibular', 'Cat04'),\par
+('Comparecimento na Justi\'e7a do Trabalho', 'Cat04'),\par
+('Atrasos devido a acidentes de transporte', 'Cat04');\par
+\par
+CREATE TABLE tb_requisicao_faltas (\par
+    idrequisicao INT AUTO_INCREMENT PRIMARY KEY,\par
+    idprofessor INT,\par
+    idcurso INT,\par
+    idcategoria INT,\par
+    idjustificativa INT,\par
+    datainicial DATE NOT NULL,\par
+    datafinal DATE NOT NULL,\par
+    cxjustificativa VARCHAR(255),\par
+    comentariocoord VARCHAR(255),\par
+    statusrequisicao ENUM('aprovado', 'reprovado'),\par
+    FOREIGN KEY (idprofessor) REFERENCES tb_professores(idprofessor),\par
+    FOREIGN KEY (idcurso) REFERENCES tb_cursos(idcurso),\par
+    FOREIGN KEY (idcategoria) REFERENCES tb_categoria_faltas(idcategoria),\par
+    FOREIGN KEY (idjustificativa) REFERENCES tb_justificativa_faltas(idjustificativa)\par
+);\par
+\par
+CREATE TABLE tb_reposicao_aux01 (\par
+    idreposicaoaux01 INT AUTO_INCREMENT PRIMARY KEY,\par
+    turno ENUM('manha', 'tarde', 'noite') NOT NULL,\par
+    tiporeposicao ENUM('Atividade', 'Aula Ministrada', 'Outros') NOT NULL,\par
+    idrequisicao INT,\par
+    FOREIGN KEY (idrequisicao) REFERENCES tb_requisicao_faltas(idrequisicao)\par
+);\par
+\par
+CREATE TABLE tb_reposicao_aux02 (\par
+    idreposicaoaux02 INT AUTO_INCREMENT PRIMARY KEY,\par
+    datareposicao DATE NOT NULL,\par
+    horainicio TIME NOT NULL,\par
+    horafim TIME NOT NULL,\par
+    idreposicaoaux01 INT,\par
+    idrequisicao INT,\par
+    iddisciplina INT,\par
+    FOREIGN KEY (idreposicaoaux01) REFERENCES tb_reposicao_aux01(idreposicaoaux01),\par
+    FOREIGN KEY (idrequisicao) REFERENCES tb_requisicao_faltas(idrequisicao),\par
+    FOREIGN KEY (iddisciplina) REFERENCES tb_disciplinas(iddisciplina)\par
+);\par
+\par
+CREATE TABLE tb_requisicao_completa (\par
+    idrequisicaocompleta INT AUTO_INCREMENT PRIMARY KEY,\par
+    finalizado ENUM('finalizado', 'aguardando') NOT NULL,\par
+    idprofessor INT,\par
+    idcurso INT,\par
+    idcategoria INT,\par
+    idjustificativa INT,\par
+    idrequisicao INT,\par
+    idreposicaoaux01 INT,\par
+    idreposicaoaux02 INT,\par
+    FOREIGN KEY (idprofessor) REFERENCES tb_professores(idprofessor),\par
+    FOREIGN KEY (idcurso) REFERENCES tb_cursos(idcurso),\par
+    FOREIGN KEY (idcategoria) REFERENCES tb_categoria_faltas(idcategoria),\par
+    FOREIGN KEY (idjustificativa) REFERENCES tb_justificativa_faltas(idjustificativa),\par
+    FOREIGN KEY (idrequisicao) REFERENCES tb_requisicao_faltas(idrequisicao),\par
+    FOREIGN KEY (idreposicaoaux01) REFERENCES tb_reposicao_aux01(idreposicaoaux01),\par
+    FOREIGN KEY (idreposicaoaux02) REFERENCES tb_reposicao_aux02(idreposicaoaux02)\par
+);\par
+}
+ 

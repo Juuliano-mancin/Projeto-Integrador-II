@@ -1,30 +1,49 @@
-/* Estilos gerais para o corpo da página */
+/* Inclusão das fontes conforme o Guia de Estilo CPS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;500&display=swap');
+
 body {
-    display: flex;
-    flex-direction: column; /* Coluna para alinhar header e div principal */
-    margin: 0; /* Remove margens padrão */
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    margin: 0px;
     height: 100vh; /* Altura total da viewport */
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Fonte padrão */
-    font-size: 14px; /* Tamanho padrão */
-    line-height: 1.5; /* Altura da linha padrão */
-    background-color: #F0F0F0; /* Cinza claro como fundo */
-    color: #000000; /* Texto preto */
+    padding: 0;
+    background-color: #f8f8f8; /* Fundo suave */
+    color: #666666; /* Texto principal */
 }
 
-/* Estilos para o cabeçalho fixo */
 header {
-    position: fixed; /* Fixa o header no topo */
+    flex-direction: row;
+    justify-content: center; /* Alinha verticalmente os itens ao centro */
+   
     top: 0; /* Alinha ao topo */
     left: 0; /* Alinha à esquerda */
     width: 100%; /* Largura total */
     padding: 10px 0; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-    font-weight: bold; /* Peso da fonte do header */
-    font-size: 16px; /* Tamanho da fonte do header */
     background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
     color: #FFFFFF; /* Texto branco */
+    
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
 }
 
+/* DivA: duas subdivisões alinhadas lado a lado */
+.divA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+}
+
+h2, h3 {
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin: 0;
+}
+/* Estilos para as subdivisões e a divB */
+.subDiv1, .subDiv2 {
+
+    padding: 10px 20px;
+    
+}
 /* Estilos para a div principal */
 .principal {
     display: flex;

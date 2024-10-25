@@ -4,7 +4,7 @@ body {
     height: 100vh; /* Altura total da viewport */
     padding: 0;
     background-color: #f9f9f9; /* Fundo suave */
-    color: #333333; /* Texto principal */
+    color: #666666; /* Texto principal */
 }
 
 h2, h3 {

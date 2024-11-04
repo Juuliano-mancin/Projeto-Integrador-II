@@ -15,20 +15,28 @@ session_start();
 <body>
     <!-- Header fixo no topo da página -->
     <header>
-        <form action="logout.php" method="POST" style="float: right; margin: 10px;">
-            <button type="submit">Logout</button>
-        </form>
-        Placeholder para o Header
+        <div class="header-container">
+            <div class="divA">
+                <div class="subDiv1">
+                    <h2>PORTAL JUSTIFICATIVA DE FALTAS</h2>
+                    <h3>Coordenação</h3>
+                </div>
+                
+                <div class="subDiv2"> 
+                    <img src="img/Logos_oficiais/logo_cps_versao_br.png" alt="Logo">       
+                </div>
+            </div>
+            <div class="divA_2">
+           
+            </div>
+        </div>
     </header>
 
     <!-- Conteúdo principal da página -->
     <div class="principal">
-        <!-- DivA contendo as subdivisões lado a lado -->
-        <div class="divA">
-            <!-- SubDiv1 - Exibe informações de login -->
-            <div class="subDiv1">
-                Logado como coordenador <br>
-                <?php
+        <div class="divA1">
+            <div class="subA1">
+            <?php
                 // Verificando se o nome e sobrenome estão definidos na sessão
                 if (isset($_SESSION['nome']) && isset($_SESSION['sobrenome'])) {
                     echo "Bem vindo, " . htmlspecialchars($_SESSION['nome']) . " " . htmlspecialchars($_SESSION['sobrenome']) . "!";
@@ -37,40 +45,55 @@ session_start();
                 }
                 ?>
             </div>
-            <!-- SubDiv2 - Botão "Nova Solicitação" com ícone -->
-            <div class="subDiv2">
-                <!-- Botão de nova solicitação pode ser adicionado aqui se necessário -->
+            <div class="subA2">
+            <form action="logout.php" method="POST" style="float: right; margin: 10px;">
+                    <button type="submit" class="Sairbtn">
+                        SAIR
+                    </button>
+                </form>
             </div>
         </div>
 
-        <!-- DivB - Exibe as solicitações realizadas e a tabela de dados -->
         <div class="divB">
-            Solicitações realizadas
-            <br><br>
-            <!-- Input para filtrar os dados -->
-            <input type="text" class="inputFiltro" placeholder="Filtrar dados...">
-            <!-- Tabela para exibir as solicitações -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Professor</th>
-                        <th>Curso</th>
-                        <th>Disciplina</th>
-                        <th>Status</th>
-                        <th>Comentário</th>
-                        <th>Visualizar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- As linhas de dados irão aqui -->
-                </tbody>
-            </table>
-            <!-- Botão para imprimir o relatório, com ícone -->
-            <button class="imprimirBtn">
-                <img src="img/Icones/filePlaceholder.svg" alt="Imprimir" class="icon"> <!-- Ícone de imprimir -->
-                Imprimir Relatório
-            </button>
+                <div class="subB1">
+                    <p>Solicitações realizadas</p>
+                    <input type="text" class="inputFiltro" placeholder="Filtrar dados...">
+                </div>
+                <div class="subB2">
+                    <form>
+                        
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Professor</th>
+                                    <th>Curso</th>
+                                    <th>Disciplina</th>
+                                    <th>Status</th>
+                                    <th>Comentario Coordenação</th>
+                                    <th>Finalizar</th>
+                                    <th>Visualizar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td>23/10/24</td>
+                                <td>Ana Célia</td>
+                                <td>DSM</td>
+                                <td>APROVADO</td>
+                                <td>teste</td>
+                                <td>FINALIZADO</td>
+                                <td>teste</td>
+                                <td>arquivo</td>
+                                <!-- As linhas de dados irão aqui -->
+                            </tbody>
+                        </table>
+                        <button class="imprimirBtn">
+                            <img src="img/Icones/arquivo_pdf.svg" alt="Imprimir" class="icon"> <!-- Ícone de imprimir -->
+                            Imprimir Relatório
+                        </button>
+                    </form>
+                </div>
+            
         </div>
     </div>
 </body>

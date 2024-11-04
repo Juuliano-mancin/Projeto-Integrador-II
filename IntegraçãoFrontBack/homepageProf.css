@@ -117,7 +117,7 @@ table {
     margin-bottom: 20px; /* Espaçamento inferior da tabela */
 }
 
-th, td {
+td {
     border: none;
     padding: 10px; /* Preenchimento interno das células */
     text-align: center; /* Alinhamento central do texto */
@@ -129,6 +129,9 @@ th {
     background-color: #b20000; /* Vermelho CPS para cabeçalhos da tabela */
     color: #f8f8f8; /* Texto branco */
     border-radius: 2px;
+    padding: 10px; /* Preenchimento interno das células */
+    text-align: center; /* Alinhamento central do texto */
+    height: 35px; /* Altura fixa para as células */
 }
 
 /* Botão de imprimir relatório */
@@ -146,6 +149,7 @@ th {
     color: #f8f8f8; /* Texto branco */
     transition: background-color 0.3s; /* Efeito de transição */
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para efeito de profundidade */
+
 }
 
 .imprimirBtn:hover {
@@ -187,4 +191,21 @@ p {
     width: auto; /* Mantém a proporção da imagem */
 }
 
-
+.solicitacaoBtn {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    display: flex;
+    align-items: center;
+    gap: 0px;               /* Espaço entre o ícone e o texto */
+    background: none;       /* Remove o fundo */
+    border: none;           /* Remove as bordas */
+    margin: 0;              /* Remove a margem */
+    padding: 5px;             /* Remove o espaçamento interno */
+    font-size: 12px;        /* Ajuste o tamanho da fonte conforme necessário */
+    cursor: pointer;        /* Exibe o cursor de mão */
+    color: #666666;            /* Define a cor do texto */
+    transition: color 0.3s; /* Suaviza a transição da cor */
+}
+.solicitacaoBtn .icon {
+    width: 20px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 20px;
+}

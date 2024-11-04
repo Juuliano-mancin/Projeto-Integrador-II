@@ -131,27 +131,6 @@ th {
     border-radius: 2px;
 }
 
-/* Botão de imprimir relatório */
-.imprimirBtn {
-    margin-top: 20px; /* Espaçamento acima do botão */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    border: 1px solid #b20000; /* Borda preta */
-    background-color: #B20000; /* Botão branco */
-    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
-    display: flex; /* Flexbox para o botão */
-    align-items: center; /* Alinha ícone e texto verticalmente */
-    font-size: 16px; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    color: #f8f8f8; /* Texto branco */
-    transition: background-color 0.3s; /* Efeito de transição */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para efeito de profundidade */
-}
-
-.imprimirBtn:hover {
-background-color: #7E0000; /* Cor ao passar o mouse */
-}
-
 
 /* Estilos para os ícones */
 .icon {

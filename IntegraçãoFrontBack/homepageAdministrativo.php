@@ -38,7 +38,7 @@ session_start();
                 <?php
                 // Verificando se o nome está definido na sessão
                 if (isset($_SESSION['nome'])) {
-                    echo "Bem vindo, " . htmlspecialchars($_SESSION['nome']) . "!";
+                    echo "Bem vindo, " . htmlspecialchars($_SESSION['nome']);
                 } else {
                     echo "Bem vindo!";
                 }
@@ -86,10 +86,7 @@ session_start();
                                 <!-- As linhas de dados irão aqui -->
                             </tbody>
                         </table>
-                        <button class="imprimirBtn">
-                            <img src="img/Icones/arquivo_pdf.svg" alt="Imprimir" class="icon"> <!-- Ícone de imprimir -->
-                            Imprimir Relatório
-                        </button>
+                       
                     </form>
                 </div>
             

@@ -30,14 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Redirecionando conforme a função do usuário
         switch ($funcao) {
-            case 'Professor':
-                header("Location: HomepageProfessor.php");
+            case 'professor':
+                header("Location: homepageProfessor.php");
                 break;
-            case 'Administrativo':
-                header("Location: HomepageAdministrativo.php");
+            case 'administrativo':
+                header("Location: homepageAdministrativo.php");
                 break;
-            case 'Coordenacao':
-                header("Location: HomepageCoordenacao.php");
+            case 'coordenacao':
+                header("Location: homepageCoordenacao.php");
                 break;
         }
 

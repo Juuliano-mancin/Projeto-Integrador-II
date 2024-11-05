@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="principal">
+        <div class="login-text">
+            <p class="titulo">Faça Login</p>
+            <p class="subtitulo">para continuar</p>
+        </div>
+
+        <br><br>
+        <form action="login.php" method="POST">
+            <label for="login">
+                <img src="img/Icones/Login.svg" alt="Ícone de Login" class="icon">
+                Login
+            </label><br>
+            <input type="text" id="login" name="login" placeholder="Matrícula"><br><br>
+
+            <label for="senha">
+                <img src="img/Icones/Password.svg" alt="Ícone de Senha" class="icon">
+                Senha
+            </label><br>
+            <input type="password" id="senha" name="senha" placeholder="Senha"><br><br>
+
+            <input type="submit" value="Login">
+        </form>           
+        <br><br>
+
+        <p>Esqueceu sua senha?<br>
+        Solicite uma nova senha <a href="novasenha.php">aqui</a>!</p>
+    </div>
+</body>
+</html>

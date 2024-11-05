@@ -1,0 +1,184 @@
+/* Inclusão das fontes conforme o Guia de Estilo CPS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    margin: 0px;
+    height: 100vh; /* Altura total da viewport */
+    padding: 0;
+    background-color: #f8f8f8; /* Fundo suave */
+    color: #666666; /* Texto principal */
+}
+
+header {
+    flex-direction: row;
+    justify-content: center; /* Alinha verticalmente os itens ao centro */
+   
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    padding: 10px 0; /* Espaçamento interno */
+    background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
+    color: #FFFFFF; /* Texto branco */
+    
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.subDiv2 img {
+    height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+/* DivA: duas subdivisões alinhadas lado a lado */
+.divA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+}
+.h2-header{
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin:0;
+    padding-top: 0;
+}
+h3{
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin:0; 
+}
+/* Estilos para as subdivisões e a divB */
+.subDiv1, .subDiv2 {
+
+    padding: 10px 20px;
+    
+}
+
+
+/*DIVS BODY*/
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    width: 90%; /* Largura da div principal */
+    max-width: 800px; /* Largura máxima */
+    margin: 60px auto 0; /* Margem superior para não sobrepor o header */
+    margin-bottom: 30px;
+    background-color: #f8f8f8; /* Fundo branco da div principal */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
+}
+.divA1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.subA1{
+    padding-left:10px;
+    font-weight: bold;
+    
+}
+.subA1a{
+    font-weight: bold;
+}
+.subA2 {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+.Sairbtn {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    background: none;       /* Remove o fundo */
+    border: none;           /* Remove as bordas */
+    margin: 0;              /* Remove a margem */
+    padding: 0;             /* Remove o espaçamento interno */
+    font-size: 12px;        /* Ajuste o tamanho da fonte conforme necessário */
+    cursor: pointer;        /* Exibe o cursor de mão */
+    color: #7E0000;            /* Define a cor do texto */
+    border-bottom: 1px solid #7E0000; 
+    transition: color 0.3s; /* Suaviza a transição da cor */
+}
+
+p {
+    font-size: 16px;
+}
+
+.divB {
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: column; /* Alinha "Novo Cadastro" e os botões em coluna */
+    padding: 10px;
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+}
+.subB1{
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: row; /* Alinha "Novo Cadastro" e os botões em coluna */
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+.subB2{
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+   padding: 10px;
+}
+label{
+    font-size: 18px;
+    padding-right: 10px;
+}
+.subForms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+.subForms2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+}
+.subForms-datafinal{
+    margin-left: 50px;
+}
+.subForms3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+}
+h2.text{
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin:0;
+    padding-top: 25px;
+    font-weight:normal;
+}
+.subForms-faltas{
+    margin-bottom: 8px;
+}
+
+select{
+    margin-right: 5px;
+    padding: 10px; /* Espaçamento interno */
+    border: 2px solid #E6E6E6 ;/* Borda cinza */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #F8F8F8; /* Cinza com 50% de transparência */
+}
+input[type="date"]{
+    margin-right: 5px;
+    padding: 10px; /* Espaçamento interno */
+    border: 2px solid #E6E6E6 ;/* Borda cinza */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #F8F8F8; /* Cinza com 50% de transparência */
+
+}

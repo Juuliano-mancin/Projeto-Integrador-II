@@ -1,0 +1,105 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #666666;
+}
+
+.principal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #DADADA;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    width: 550px;
+    margin-right: -80px;
+    background-image: url(img/Efeitos_customizados/Efeito_login02.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.login-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.titulo {
+    font-family: 'Roboto Slab', serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    color: #666666;
+}
+
+.subtitulo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 20px;
+    color: #666666;
+}
+
+.icon {
+    width: 15px;
+    height: auto;
+    margin-right: 5px;
+    vertical-align: baseline;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-container input[type="submit"] {
+    margin-left: 10px;
+}
+
+input[type="submit"] {
+    padding: 4px 8px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #7E0000;
+    color: #FFFFFF;
+    border-style: solid;
+    border-width: thin;
+    border-color: #7E0000;
+}
+
+input[type="submit"]:hover {
+    background-color: #B20000;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #666666;
+}
+
+input[type="text"], input[type="password"] {
+    border: 1px solid #DADADA;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: rgba(128, 128, 128, 0.5);
+    font-style: italic;
+}
+

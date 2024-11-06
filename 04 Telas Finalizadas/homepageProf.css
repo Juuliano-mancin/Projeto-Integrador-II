@@ -1,0 +1,191 @@
+/* Inclusão das fontes conforme o Guia de Estilo CPS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    margin: 0px;
+    height: 100vh; /* Altura total da viewport */
+    padding: 0;
+    background-color: #f8f8f8; /* Fundo suave */
+    color: #666666; /* Texto principal */
+}
+
+header {
+    flex-direction: row;
+    justify-content: center; /* Alinha verticalmente os itens ao centro */
+   
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    padding: 10px 0; /* Espaçamento interno */
+    background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
+    color: #FFFFFF; /* Texto branco */
+    
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
+}
+
+/* DivA: duas subdivisões alinhadas lado a lado */
+.divA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+}
+
+h2, h3 {
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin: 0;
+}
+/* Estilos para as subdivisões e a divB */
+.subDiv1, .subDiv2 {
+
+    padding: 10px 20px;
+    
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    width: 90%; /* Largura da div principal */
+    width: fit-content; /* Largura dinâmica, ajustando ao conteúdo */
+    margin: 60px auto 0; /* Margem superior para não sobrepor o header */
+    background-color: #f8f8f8; /* Fundo branco da div principal */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
+}
+.divA1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    padding-bottom: 15px;
+}
+.subA1{
+    padding-left: 7px;
+    font-weight: bold;
+}
+/* Estilos para as subdivisões e a divB */
+.divB {
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+}
+/* Estilo para alinhar o ícone dentro do botão */
+.subA2 {
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: column; /* Alinha "Novo Cadastro" e os botões em coluna */
+    align-items: center; /* Centraliza o conteúdo no eixo X */
+}
+.divB {
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: column; /* Alinha "Novo Cadastro" e os botões em coluna */
+    padding: 10px;
+}
+.subB1{
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: row; /* Alinha "Novo Cadastro" e os botões em coluna */
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+.subB2{
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.inputFiltro {
+    width: 30%; /* Largura total */
+    height: 20%;
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #E6E6E6 ;/* Borda cinza */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #DADADA; /* Cinza com 50% de transparência */
+}
+
+/* Estilos da tabela */
+table {
+    width: 100%; /* Largura total da tabela */
+    border-collapse: collapse; /* Colapsa bordas */
+    margin-bottom: 20px; /* Espaçamento inferior da tabela */
+}
+
+td {
+    border: none;
+    padding: 10px; /* Preenchimento interno das células */
+    text-align: center; /* Alinhamento central do texto */
+    height: 35px; /* Altura fixa para as células */
+
+}
+/* Estilos para cabeçalhos da tabela */
+th {
+    background-color: #b20000; /* Vermelho CPS para cabeçalhos da tabela */
+    color: #f8f8f8; /* Texto branco */
+    border-radius: 2px;
+    padding: 10px; /* Preenchimento interno das células */
+    text-align: center; /* Alinhamento central do texto */
+    height: 35px; /* Altura fixa para as células */
+    text-align: center; /* Alinhamento central */
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden; /* Esconde o conteúdo excedente */
+}
+
+/* Estilos para os ícones */
+.icon {
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+    width: 20px; /* Largura do ícone */
+    height: 20px; /* Altura do ícone */
+}
+.icon2 {
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+    width: 10px; /* Largura do ícone */
+    height: 10px; /* Altura do ícone */
+}
+
+p {
+    font-size: 16px;
+}
+
+.Sairbtn {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    background: none;       /* Remove o fundo */
+    border: none;           /* Remove as bordas */
+    margin: 0;              /* Remove a margem */
+    padding: 0;             /* Remove o espaçamento interno */
+    font-size: 12px;        /* Ajuste o tamanho da fonte conforme necessário */
+    cursor: pointer;        /* Exibe o cursor de mão */
+    color: #7E0000;            /* Define a cor do texto */
+    border-bottom: 1px solid #7E0000; 
+    transition: color 0.3s; /* Suaviza a transição da cor */
+}
+
+.subDiv2 img {
+    height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+.solicitacaoBtn {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    display: flex;
+    align-items: center;
+    gap: 0px;               /* Espaço entre o ícone e o texto */
+    background: none;       /* Remove o fundo */
+    border: none;           /* Remove as bordas */
+    margin: 0;              /* Remove a margem */
+    padding: 5px;             /* Remove o espaçamento interno */
+    font-size: 12px;        /* Ajuste o tamanho da fonte conforme necessário */
+    cursor: pointer;        /* Exibe o cursor de mão */
+    color: #666666;            /* Define a cor do texto */
+    transition: color 0.3s; /* Suaviza a transição da cor */
+}
+.solicitacaoBtn .icon {
+    width: 20px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 20px;
+}

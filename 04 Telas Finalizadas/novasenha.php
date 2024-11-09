@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
             if ($stmt->affected_rows > 0) {
-                $mensagem = "Senha atualizada com sucesso!";
+                $mensagem = "<b>Senha atualizada com sucesso!</b>";
             } else {
                 $mensagem = "Matrícula não encontrada ou a senha não foi alterada.";
             }

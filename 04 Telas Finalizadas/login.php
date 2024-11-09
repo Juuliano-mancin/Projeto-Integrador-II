@@ -1,34 +1,25 @@
 <?php
-// Iniciando a sessão
 session_start();
-
-// Incluindo o arquivo de conexão
 include 'conexao.php';
 
-// Verificando se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Capturando os dados do formulário
     $matricula = $_POST['login'];
     $senha = $_POST['senha'];
 
-    // Preparando a consulta para evitar SQL Injection
-    $stmt = $conexao->prepare("SELECT matricula, nome, sobrenome, funcao FROM tb_professores WHERE matricula = ? AND senha = ?");
-    $stmt->bind_param("is", $matricula, $senha);  // 'i' para inteiro (matrícula) e 's' para string (senha)
+    $stmt = $conexao->prepare("SELECT idprofessor, matricula, nome, sobrenome, funcao FROM tb_professores WHERE matricula = ? AND senha = ?");
+    $stmt->bind_param("is", $matricula, $senha);
     $stmt->execute();
     $stmt->store_result();
 
-    // Verificando se o usuário existe
     if ($stmt->num_rows > 0) {
-        // Armazenando os resultados da consulta
-        $stmt->bind_result($matriculaProfessor, $nomeDoProfessor, $sobrenomeDoProfessor, $funcao);
+        $stmt->bind_result($idProfessor, $matriculaProfessor, $nomeDoProfessor, $sobrenomeDoProfessor, $funcao);
         $stmt->fetch();
 
-        // Armazenando matrícula, nome e sobrenome na sessão
         $_SESSION['matricula'] = $matriculaProfessor;
         $_SESSION['nome'] = $nomeDoProfessor;
         $_SESSION['sobrenome'] = $sobrenomeDoProfessor;
+        $_SESSION['idprofessor'] = $idProfessor;
 
-        // Redirecionando conforme a função do usuário
         switch ($funcao) {
             case 'professor':
                 header("Location: homepageProfessor.php");
@@ -41,15 +32,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 break;
         }
 
-        exit(); // Encerrando o script após o redirecionamento
+        exit();
     } else {
-        echo "<script>alert('Matrícula ou senha inválidos.');</script>";
+        echo "<script>alert('Matrícula ou senha inválidos.'); window.location.href = 'login.html'</script>";
     }
 
-    $stmt->close(); // Fechando a declaração
+    $stmt->close();
 }
 
-$conexao->close(); // Fechando a conexão
+$conexao->close();
 ?>
 
 <!DOCTYPE html>

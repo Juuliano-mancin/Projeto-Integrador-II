@@ -1,6 +1,33 @@
 <?php
 // Iniciando a sessão
 session_start();
+
+// Verificando se o coordenador está logado
+if (!isset($_SESSION['nome']) || !isset($_SESSION['sobrenome'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Conexão com o banco de dados
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=justificativafaltas', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
+    exit();
+}
+
+// Obtendo as requisições dos professores sem duplicar
+$sql = "SELECT r.idrequisicao, c.siglacurso AS curso, cf.categoria, 
+               DATE_FORMAT(r.data_inicial, '%d %m %Y') AS data_falta, 
+               r.statusrequisicao, r.comentariocoordenacao, p.nome AS professor
+        FROM tb_requisicao_faltas r
+        JOIN tb_cursos c ON r.idcurso = c.idcurso
+        JOIN tb_categoria_faltas cf ON r.idcategoria = cf.idcategoria
+        JOIN tb_professores p ON r.idprofessor = p.idprofessor";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +38,31 @@ session_start();
     <title>Homepage Coordenação</title>
     <!-- Importando o arquivo CSS externo -->
     <link rel="stylesheet" href="homepageCoordenacao.css">
+    <script>
+        function filtrarDados() {
+            const input = document.getElementById('filtroInput');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('solicitacoesTable');
+            const tr = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < tr.length; i++) {
+                const tds = tr[i].getElementsByTagName('td');
+                let match = false;
+
+                for (let j = 0; j < tds.length; j++) {
+                    if (tds[j]) {
+                        const txtValue = tds[j].textContent || tds[j].innerText;
+                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+
+                tr[i].style.display = match ? '' : 'none';
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- Header fixo no topo da página -->
@@ -37,12 +89,7 @@ session_start();
         <div class="divA1">
             <div class="subA1">
             <?php
-                // Verificando se o nome e sobrenome estão definidos na sessão
-                if (isset($_SESSION['nome']) && isset($_SESSION['sobrenome'])) {
-                    echo "Bem vindo, " . htmlspecialchars($_SESSION['nome']) . " " . htmlspecialchars($_SESSION['sobrenome']);
-                } else {
-                    echo "Bem vindo!";
-                }
+                echo "Bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . " " . htmlspecialchars($_SESSION['sobrenome']);
                 ?>
             </div>
             <div class="subA2">
@@ -57,7 +104,7 @@ session_start();
         <div class="divB">
                 <div class="subB1">
                     <p>Solicitações realizadas</p>
-                    <input type="text" class="inputFiltro" placeholder="Filtrar dados...">
+                    <input type="text" id="filtroInput" class="inputFiltro" placeholder="Filtrar dados..." onkeyup="filtrarDados()">
                 </div>
                 <div class="subB2">
                     <form>
@@ -65,26 +112,57 @@ session_start();
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Data</th>
-                                    <th>Professor</th>
-                                    <th>Curso</th>
-                                    <th>Disciplina</th>
-                                    <th>Status</th>
-                                    <th>Comentario Coordenação</th>
-                                    <th>Finalizar</th>
-                                    <th>Visualizar</th>
+                                <th>Professor</th>
+                                <th>Curso</th>
+                                <th>Categoria</th>
+                                <th>Data da Falta</th>
+                                <th>Status</th>
+                                <th>Comentário</th>
+                                <th>Alterar</th>
+                                <th>Consultar</th>
+                                <th>Plano de Reposição</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <td>23/10/24</td>
-                                <td>Ana Célia</td>
-                                <td>DSM</td>
-                                <td>APROVADO</td>
-                                <td>teste</td>
-                                <td>FINALIZADO</td>
-                                <td>teste</td>
-                                <td>arquivo</td>
-                                <!-- As linhas de dados irão aqui -->
+                                <?php
+                                // Loop para exibir as requisições na tabela
+                                while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    echo "<tr>";
+                                    echo "<td>" . htmlspecialchars($linha['professor']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($linha['curso']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($linha['categoria']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($linha['data_falta']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($linha['statusrequisicao']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($linha['comentariocoordenacao'] ?? ' ') . "</td>";
+                                    
+                                    // Botão para alterar status
+                                    echo "<td>
+                                            <form action='alterarStatusCoordenacao.php' method='GET'>
+                                                <input type='hidden' name='idrequisicao' value='" . htmlspecialchars($linha['idrequisicao']) . "'>
+                                                <button type='submit'>Alterar</button>
+                                            </form>
+                                        </td>";
+                                    
+                                    // Botão para consultar requisição com o parâmetro de origem "coordenador"
+                                    echo "<td>
+                                            <form action='consultarRequisicaoPronta.php' method='GET'>
+                                                <input type='hidden' name='idrequisicao' value='" . htmlspecialchars($linha['idrequisicao']) . "'>
+                                                <input type='hidden' name='origem' value='coordenador'>
+                                                <button type='submit'>Consultar</button>
+                                            </form>
+                                        </td>";
+
+                                    // Link para o "Plano de Reposição" - passando o idrequisicao
+                                    echo "<td>
+                                            <form action='consultarPlanoReposicao.php' method='GET'>
+                                                <input type='hidden' name='idrequisicao' value='" . htmlspecialchars($linha['idrequisicao']) . "'>
+                                                <button type='submit'>Plano de Reposição</button>
+                                            </form>
+                                        </td>";
+
+                                    echo "</tr>";
+                                }
+                                ?>
                             </tbody>
                         </table>
                        

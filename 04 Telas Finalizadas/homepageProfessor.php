@@ -1,6 +1,25 @@
 <?php
 // Iniciando a sessão
 session_start();
+
+// Verificando se o usuário está logado
+if (!isset($_SESSION['nome']) || !isset($_SESSION['sobrenome'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Conexão com o banco de dados
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=justificativafaltas', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
+    exit();
+}
+
+// Obtendo o ID do professor logado
+$idProfessor = $_SESSION['idprofessor'];
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -60,13 +79,8 @@ session_start();
     <div class="principal">
         <div class="divA1">
             <div class="subA1">
-                <?php
-                // Verificando se o nome está definido na sessão
-                if (isset($_SESSION['nome'])) {
-                    echo "Bem vindo, " . htmlspecialchars($_SESSION['nome']);
-                } else {
-                    echo "Bem vindo!";
-                }
+            <?php
+                echo "Bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . " " . htmlspecialchars($_SESSION['sobrenome']);
                 ?>
             </div>
             <div class="subA2">
@@ -99,7 +113,6 @@ session_start();
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Data da Requisição</th>
                                     <th>Sigla do Curso</th>
                                     <th>Categoria</th>
                                     <th>Data da Falta</th>
@@ -110,14 +123,33 @@ session_start();
                                 </tr>
                             </thead>
                             <tbody>
-                                    <td>23/10/2024</td>
-                                    <td>DSM</td>
-                                    <td>Presencial</td>
-                                    <td>19/10/2024</td>
-                                    <td>APROVADO</td>
-                                    <td></td>
-                                    <td>Alterar</td>
-                                    <td>Consulta</td> 
+                                <?php
+                                // Consulta SQL para buscar as requisições do professor logado
+                                $sql = "SELECT r.idrequisicao, c.siglacurso AS curso, cf.categoria, 
+                                            DATE_FORMAT(r.data_inicial, '%d %m %Y') AS data_falta, 
+                                            r.statusrequisicao, r.comentariocoordenacao
+                                        FROM tb_requisicao_faltas r
+                                        JOIN tb_cursos c ON r.idcurso = c.idcurso
+                                        JOIN tb_categoria_faltas cf ON r.idcategoria = cf.idcategoria
+                                        WHERE r.idprofessor = ?";
+
+                                // Preparar e executar a consulta
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute([$idProfessor]);
+
+                                // Loop para exibir os dados na tabela
+                                while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    echo "<tr>";
+                                    echo "<td>" . htmlspecialchars($linha['curso']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($linha['categoria']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($linha['data_falta']) . "</td>"; // Exibindo a data formatada
+                                    echo "<td>" . htmlspecialchars($linha['statusrequisicao']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($linha['comentariocoordenacao'] ?? ' ') . "</td>"; // Máscara para NULL
+                                    echo "<td><a href='editarRequisicao.php?id=" . htmlspecialchars($linha['idrequisicao']) . "'>Alterar</a></td>"; // Link para alterar
+                                    echo "<td><a href='consultaRequisicao.php?idrequisicao=" . htmlspecialchars($linha['idrequisicao']) . "'>Consultar</a></td>"; // Link para consulta
+                                    echo "</tr>";
+                                }
+                                ?>
                             </tbody>
                         </table>
                         

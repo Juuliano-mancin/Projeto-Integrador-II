@@ -54,7 +54,7 @@ h3{
     
 }
 
-/*-------- DIVS BODY ----------*/
+/*DIVS BODY*/
 
 .principal {
     display: flex;
@@ -79,10 +79,108 @@ h3{
     padding-left: 5px;
     padding-right: 5px;
 }
+.divA2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 h1{
     font-family: 'Roboto Slab', serif; /* Títulos */ 
 }
 
+.divB {
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: column; /* Alinha "Novo Cadastro" e os botões em coluna */
+}
+.divB1{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    align-items: baseline;
+    justify-content: space-between;
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    border-radius: 4px;
+    padding: 10px;
+    padding: 15px;
+    margin: 5px;
+    width: auto;
+}
+
+
+.subB2{
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    border-radius: 4px;
+    padding: 10px;
+    padding: 15px;
+    margin: 5px;
+}
+
+
+.divB1 form{
+    width: auto;
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.form1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+label{
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin:0;
+    font-size: 20px;
+    font-weight:normal;
+    margin-right: 15px;
+}
+input{
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-right: 15px;
+    padding: 10px 20px;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    background-color: #e6e6e66b;
+}
+textarea {
+    width: 100%; /* Largura total, para acompanhar a largura dos outros campos */
+    height: 100px; /* Defina a altura fixa desejada */
+    font-size: 16px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    border: 1px solid #E6E6E6; /* Bordas padrão, igual aos outros inputs */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #e6e6e66b; /* Cor de fundo suave, igual aos outros campos */
+    resize: none; /* Desativa a redimensionação manual do textarea */
+}
+.form1-comentario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.form2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
 .Voltarbtn {
     font-family: 'Roboto', sans-serif; /* Texto geral */
     background: none;       /* Remove o fundo */
@@ -95,60 +193,6 @@ h1{
     border-bottom: 1px solid #7E0000; 
     transition: color 0.3s; /* Suaviza a transição da cor */
 }
-
-.divB {
-    display: flex; /* Flexbox para alinhar os botões lado a lado */
-    flex-direction: column; /* Alinha "Novo Cadastro" e os botões em coluna */
-    padding: 10px;
-    border: 1px solid #E6E6E6; /* Borda cinza */
-    padding: 15px;
-    margin: 5px;
-    border-radius: 4px;
-}
-.divB1{
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-    align-items: baseline;
-    justify-content: space-between;
-}
-
-.subB1{
-    display: flex;
-    flex-direction:row ;
-    align-items: baseline;
-}
-.subB2{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-}
-
-.subDado1{
-    margin-left: 15px;
-}
-.subText2{
-    margin-right: 15px;
-}
-
-p{
-    font-size: 20px;
-    margin-top: 5px;
-    padding: 10px 20px;
-    border: 1px solid #E6E6E6;
-    border-radius: 4px;
-    background-color: #e6e6e66b;
-}
-.button-container{
-    font-size: 18px;
-    border-top: 1px solid #E6E6E6;
-    margin-top: 30px;
-    padding-top: 10px;
-    padding-left: 10px;
-}
-h2.text{
-    font-family: 'Roboto Slab', serif; /* Títulos */
-    margin:0;
-    padding-top: 25px;
-    font-weight:normal;
+.foot{
+    margin-bottom: 15px;
 }

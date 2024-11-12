@@ -22,7 +22,7 @@ $idRequisicao = isset($_GET['idrequisicao']) ? intval($_GET['idrequisicao']) : 0
 
 // Determinando a página de retorno com base no parâmetro de origem
 if (isset($_GET['origem']) && $_GET['origem'] === 'administrativo') {
-    $paginaAnterior = 'homepageAdm.php';
+    $paginaAnterior = 'homepageAdministrativo.php';
 } else {
     $paginaAnterior = 'homepageCoordenacao.php';
 }
@@ -47,7 +47,6 @@ if (!$linha) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

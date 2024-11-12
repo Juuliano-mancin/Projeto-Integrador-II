@@ -112,6 +112,7 @@ $stmt->execute();
                         <table>
                             <thead>
                                 <tr>
+                                
                                 <th>Professor</th>
                                 <th>Curso</th>
                                 <th>Categoria</th>
@@ -128,6 +129,7 @@ $stmt->execute();
                                 // Loop para exibir as requisições na tabela
                                 while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     echo "<tr>";
+                                
                                     echo "<td>" . htmlspecialchars($linha['professor']) . "</td>";
                                     echo "<td>" . htmlspecialchars($linha['curso']) . "</td>";
                                     echo "<td>" . htmlspecialchars($linha['categoria']) . "</td>";

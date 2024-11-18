@@ -1,0 +1,263 @@
+/* Inclusão das fontes conforme o Guia de Estilo CPS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    margin: 0px;
+    height: 100vh; /* Altura total da viewport */
+    padding: 0;
+    background-color: #f8f8f8; /* Fundo suave */
+    color: #666666; /* Texto principal */
+}
+
+header {
+    flex-direction: row;
+    justify-content: center; /* Alinha verticalmente os itens ao centro */
+   
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    padding: 10px 0; /* Espaçamento interno */
+    background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
+    color: #FFFFFF; /* Texto branco */
+    
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.subDiv2 img {
+    height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+/* DivA: duas subdivisões alinhadas lado a lado */
+.divA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+}
+.h2-header{
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin:0;
+    padding-top: 0;
+}
+h3{
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin:0; 
+}
+/* Estilos para as subdivisões e a divB */
+.subDiv1, .subDiv2 {
+
+    padding: 10px 20px;
+    
+}
+/*----------- INICIO DO BODY -----------*/
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    padding-bottom: 30px;;
+    width: 90%; /* Largura da div principal */
+    max-width: 800px; /* Largura máxima */
+    margin: 60px auto 0; /* Margem superior para não sobrepor o header */
+    margin-bottom: 30px;
+    background-color: #f8f8f8; /* Fundo branco da div principal */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
+}
+.divA1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+h1{
+    font-family: 'Roboto Slab', serif; /* Títulos */ 
+}
+h2.text{
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin:0;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    font-weight:bolder;
+}
+h2.text1{
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin:0;
+    font-weight:bolder;
+}
+.subA1{
+    display: flex;
+    flex-direction: row;
+    padding-left: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+    align-items: center;
+    font-size: 18px;
+}
+.p1{
+    margin-right: 5px;
+    font-weight:bolder;
+}
+.p2{
+    margin-left: 20px;
+    margin-right: 5px;
+    font-weight:bolder;
+}
+.divB {
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: column; /* Alinha "Novo Cadastro" e os botões em coluna */
+    padding: 10px;
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    padding: 15px;
+    margin: 5px;
+    border-radius: 4px;
+}
+form{
+    padding: 10px;
+}
+label{
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin:0;
+    font-size: 20px;
+    font-weight:normal;
+    margin-right: 15px;
+    padding-left: 5px;
+}
+input{
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-right: 15px;
+    padding: 10px 20px;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    background-color: #e6e6e66b;
+}
+select {
+    width: 50%; /* Largura total do container */
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #E6E6E6; /* Borda cinza clara */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #e6e6e66b; /* Fundo suave */
+    color: #666666; /* Cor do texto */
+    -webkit-appearance: none; /* Remove o estilo padrão do browser */
+    -moz-appearance: none;
+    appearance: none;
+}
+#justificativa{
+    width: 70%; /* Largura total do container */
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #E6E6E6; /* Borda cinza clara */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #e6e6e66b; /* Fundo suave */
+    color: #666666; /* Cor do texto */
+    -webkit-appearance: none; /* Remove o estilo padrão do browser */
+    -moz-appearance: none;
+    appearance: none;
+}
+.custom-file-input {
+    opacity: 0; /* Torna o input invisível */
+    position: absolute; /* Remove o input da estrutura visível da página */
+    z-index: -1; /* Coloca em uma camada inferior */
+}
+
+/* Estiliza o label como um botão para simular o comportamento de seleção */
+.custom-file-label {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #7E0000; /* Cor de fundo personalizada */
+    border-style: solid;
+    border-width: thin;
+    border-color: #7E0000;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
+
+}
+
+.custom-file-label:hover {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #B20000; /* Cor de fundo personalizada */
+    border-style: solid;
+    border-width: thin;
+    border-color: #B20000;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #E6E6E6; /* Borda cinza clara */
+}
+.Voltarbtn {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    background: none;       /* Remove o fundo */
+    border: none;           /* Remove as bordas */
+    margin: 0;              /* Remove a margem */
+    padding: 0;             /* Remove o espaçamento interno */
+    font-size: 14px;        /* Ajuste o tamanho da fonte conforme necessário */
+    cursor: pointer;        /* Exibe o cursor de mão */
+    color: #7E0000;            /* Define a cor do texto */
+    border-bottom: 1px solid #7E0000; 
+    transition: color 0.3s; /* Suaviza a transição da cor */
+}
+.salvar{
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #7E0000;
+    color: #FFFFFF;
+    border-style: solid;
+    border-width: thin;
+    border-color: #7E0000;
+}
+.salvar:hover {
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #B20000;
+    color: #FFFFFF;
+    border-style: solid;
+    border-width: thin;
+    border-color: #B20000;
+}
+.dados1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }

@@ -10,7 +10,7 @@ if (!isset($_SESSION['nome']) || !isset($_SESSION['sobrenome'])) {
 
 // Conexão com o banco de dados
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=justificativafaltas', 'root', 'fatec');
+    $pdo = new PDO('mysql:host=localhost;dbname=justificativafaltas', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Erro ao conectar ao banco de dados: " . $e->getMessage();

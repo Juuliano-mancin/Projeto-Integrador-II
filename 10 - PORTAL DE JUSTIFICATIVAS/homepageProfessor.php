@@ -85,7 +85,7 @@ $idProfessor = $_SESSION['idprofessor'];
             </div>
             <div class="subA2">
             <form action="logout.php" method="POST" style="float: right; margin: 10px;">
-                    <button type="submit" class="Sairbtn">  
+                    <button type="submit" class="Sairbtn">
                         SAIR
                     </button>
                 </form>
@@ -119,7 +119,7 @@ $idProfessor = $_SESSION['idprofessor'];
                                     <th>Status</th>
                                     <th>Comentário Coordenação</th>
                                     <th>Alterar</th>
-                                    <th>Visualizar</th>
+                                    <th>Consulta</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -145,8 +145,8 @@ $idProfessor = $_SESSION['idprofessor'];
                                     echo "<td>" . htmlspecialchars($linha['data_falta']) . "</td>"; // Exibindo a data formatada
                                     echo "<td>" . htmlspecialchars($linha['statusrequisicao']) . "</td>";
                                     echo "<td>" . htmlspecialchars($linha['comentariocoordenacao'] ?? ' ') . "</td>"; // Máscara para NULL
-                                    echo "<td><a href='editarRequisicao.php?id=" . htmlspecialchars($linha['idrequisicao']) . "' class = 'editar_link'> <img src='img/Icones/editar_AzulC.svg' alt='Ícone de Editar' class='icon'> </a></td>"; // Link para alterar
-                                    echo "<td><a href='consultaRequisicao.php?idrequisicao=" . htmlspecialchars($linha['idrequisicao']) . "'> <img src='img/Icones/eye2.svg' alt='Ícone Visualizar' class='icon'></a></td>"; // Link para consulta
+                                    echo "<td><a href='editarRequisicao.php?id=" . htmlspecialchars($linha['idrequisicao']) . "'>Alterar</a></td>"; // Link para alterar
+                                    echo "<td><a href='consultaRequisicao.php?idrequisicao=" . htmlspecialchars($linha['idrequisicao']) . "'>Consultar</a></td>"; // Link para consulta
                                     echo "</tr>";
                                 }
                                 ?>

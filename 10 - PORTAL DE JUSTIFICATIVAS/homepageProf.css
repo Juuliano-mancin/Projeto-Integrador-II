@@ -142,7 +142,6 @@ th {
     margin-right: 10px; /* Espaçamento entre o ícone e o texto */
     width: 20px; /* Largura do ícone */
     height: 20px; /* Altura do ícone */
-    vertical-align:baseline;
 }
 .icon2 {
     margin-right: 5px; /* Espaçamento entre o ícone e o texto */
@@ -185,7 +184,6 @@ p {
     cursor: pointer;        /* Exibe o cursor de mão */
     color: #666666;            /* Define a cor do texto */
     transition: color 0.3s; /* Suaviza a transição da cor */
-    font-size: 14px;
 }
 .solicitacaoBtn .icon {
     width: 20px; /* Ajuste o tamanho do ícone conforme necessário */

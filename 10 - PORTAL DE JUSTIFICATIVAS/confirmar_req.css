@@ -55,6 +55,7 @@ h3{
 }
 
 /*----------- INICIO DO BODY -----------*/
+
 .principal {
     display: flex;
     flex-direction: column;
@@ -68,9 +69,6 @@ h3{
     margin-bottom: 30px;
     background-color: #f8f8f8; /* Fundo branco da div principal */
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
-}
-h1{
-    font-family: 'Roboto Slab', serif; /* Títulos */ 
 }
 .divA1 {
     display: flex;
@@ -89,15 +87,7 @@ h1{
     margin-right: 5px;
     align-items: center;
     font-size: 18px;
-}
-.divB {
-    display: flex; /* Flexbox para alinhar os botões lado a lado */
-    flex-direction: column; /* Alinha "Novo Cadastro" e os botões em coluna */
-    padding: 10px;
-    border: 1px solid #E6E6E6; /* Borda cinza */
-    padding: 15px;
-    margin: 5px;
-    border-radius: 4px;
+
 }
 .p1{
     margin-right: 5px;
@@ -108,52 +98,34 @@ h1{
     margin-right: 5px;
     font-weight:bolder;
 }
-form{
+
+h1{
+    font-family: 'Roboto Slab', serif; /* Títulos */ 
+}
+
+.divB {
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: column; /* Alinha "Novo Cadastro" e os botões em coluna */
     padding: 10px;
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    padding: 15px;
+    margin: 5px;
+    border-radius: 4px;
 }
-.form-group{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 10px;
+
+h3.texto{
+    font-weight: normal;
+    margin-right: 20px;
+    font-size: 18px;
 }
-.form-group2{
+.dados1{
     display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
+    flex-direction:row;
     justify-content: flex-start;
-    align-items: baseline;
+    align-items: center;
 }
-label{
-    font-family: 'Roboto Slab', serif; /* Títulos */
-    margin:0;
-    font-size: 20px;
-    font-weight:normal;
-    margin-right: 15px;
-    padding-left: 5px;
-}
-.text{
-    font-weight:bolder;
-}
-select {
-    width: 50%; /* Largura total do container */
+.dados{
     font-size: 16px;
-    padding: 10px 20px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #E6E6E6; /* Borda cinza clara */
-    border-radius: 4px; /* Bordas arredondadas */
-    background-color: #e6e6e66b; /* Fundo suave */
-    color: #666666; /* Cor do texto */
-    -webkit-appearance: none; /* Remove o estilo padrão do browser */
-    -moz-appearance: none;
-    appearance: none;
-}
-input{
-    width: auto;
-    height: auto;
-    font-size: 16px;
-    margin-top: 5px;
     margin-right: 15px;
     padding: 10px 20px;
     border: 1px solid #E6E6E6;
@@ -167,7 +139,7 @@ input{
     align-items: center;
     margin-top: 20px;
 }
-a {
+.Voltarbtn {
     font-family: 'Roboto', sans-serif; /* Texto geral */
     background: none;       /* Remove o fundo */
     border: none;           /* Remove as bordas */
@@ -178,10 +150,9 @@ a {
     color: #7E0000;            /* Define a cor do texto */
     border-bottom: 1px solid #7E0000; 
     transition: color 0.3s; /* Suaviza a transição da cor */
-    text-decoration: none;
 }
-.BtnEnviar{
-    padding: 4px 8px;
+.btnConfirmar{
+    padding: 5px 10px;
     text-align: center;
     display: inline-block;
     font-family: 'Roboto', sans-serif;
@@ -195,9 +166,8 @@ a {
     border-width: thin;
     border-color: #7E0000;
 }
-
-.BtnEnviar:hover {
-    padding: 4px 8px;
+.btnConfirmar:hover {
+    padding: 5px 10px;
     text-align: center;
     display: inline-block;
     font-family: 'Roboto', sans-serif;
@@ -211,33 +181,40 @@ a {
     border-width: thin;
     border-color: #B20000;
 }
+/* Oculta o botão padrão e estiliza a área do input file */
+.custom-file-input {
+    opacity: 0; /* Torna o input invisível */
+    position: absolute; /* Remove o input da estrutura visível da página */
+    z-index: -1; /* Coloca em uma camada inferior */
+}
 
-.foot{
-    margin-bottom: 15px;
+/* Estiliza o label como um botão para simular o comportamento de seleção */
+.custom-file-label {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #7E0000; /* Cor de fundo personalizada */
+    border-style: solid;
+    border-width: thin;
+    border-color: #7E0000;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+
 }
-.principal_sucesso{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #E6E6E6; /* Borda cinza */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
-    padding-bottom: 30px;;
-    width: 90%; /* Largura da div principal */
-    max-width: 800px; /* Largura máxima */
-    margin: 60px auto 0; /* Margem superior para não sobrepor o header */
-    margin-bottom: 30px;
-    background-color: #f8f8f8; /* Fundo branco da div principal */
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
-    justify-content: center;
-    align-items: center;
+
+.custom-file-label:hover {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #B20000; /* Cor de fundo personalizada */
+    border-style: solid;
+    border-width: thin;
+    border-color: #B20000;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
 }
-.divB_sucesso{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #E6E6E6;
-}
-.button-container_sucesso{
-    margin-top: 10px;
+.label_tex{
+    margin-right: 5px;
 }

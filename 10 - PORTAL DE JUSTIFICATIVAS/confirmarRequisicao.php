@@ -106,7 +106,7 @@ $justificativa_texto = $result_justificativa->fetch_assoc()['justificativa'];
             </div>
 
             <!-- Formulário para confirmar ou cancelar o envio -->
-            <form action="sucesso.php" method="POST" enctype="multipart/form-data">
+            <form action="processarRequisicao.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="curso" value="<?php echo $curso_id; ?>">
                 <input type="hidden" name="data_inicial" value="<?php echo $data_inicial; ?>">
                 <input type="hidden" name="data_final" value="<?php echo $data_final; ?>">

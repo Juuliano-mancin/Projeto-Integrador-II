@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class=principal>
         
     <div class="divA1">
-            <h1 class="text">Formulário de Requisição</h1>
+            <h1 class="text">Formulário de Reposição</h1>
         </div>
         
         <div class="subA1">
@@ -118,11 +118,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-group">
                     <label class="text">Selecione um Curso:</label><br>
                     <?php foreach ($cursos as $curso): ?>
-                        <label class="mr-3">
-                            <input type="radio" name="curso" value="<?php echo htmlspecialchars($curso['idcurso']); ?>" onchange="carregarDisciplinas(this.value)">
-                            <?php echo htmlspecialchars($curso['idcurso'] . ' - ' . $curso['curso']); ?>
-                        </label><br>
-                    <?php endforeach; ?>
+                    <label class="mr-3">
+                        <input type="radio" name="curso" value="<?php echo htmlspecialchars($curso['idcurso']); ?>" onchange="carregarDisciplinas(this.value)">
+                        <?php echo htmlspecialchars($curso['idcurso'] . ' - ' . $curso['curso']); ?>
+                    </label><br>
+                <?php endforeach; ?>
                 </div>
 
                 <div class="form-group" id="disciplinasContainer">
@@ -172,7 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="foot"></div>
    </br>
 
-    <script>
+   <script>
         // Verifica se o PHP passou a variável de sucesso para o JavaScript
         <?php if ($sucesso): ?>
             alert("Reposição enviada com sucesso!");
@@ -216,6 +216,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     </script>
+
 
 </body>
 </html>

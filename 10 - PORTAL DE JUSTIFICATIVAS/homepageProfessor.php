@@ -145,8 +145,8 @@ $idProfessor = $_SESSION['idprofessor'];
                                     echo "<td>" . htmlspecialchars($linha['data_falta']) . "</td>"; // Exibindo a data formatada
                                     echo "<td>" . htmlspecialchars($linha['statusrequisicao']) . "</td>";
                                     echo "<td>" . htmlspecialchars($linha['comentariocoordenacao'] ?? ' ') . "</td>"; // Máscara para NULL
-                                    echo "<td><a href='editarRequisicao.php?id=" . htmlspecialchars($linha['idrequisicao']) . "'>Alterar</a></td>"; // Link para alterar
-                                    echo "<td><a href='consultaRequisicao.php?idrequisicao=" . htmlspecialchars($linha['idrequisicao']) . "'>Consultar</a></td>"; // Link para consulta
+                                    echo "<td><a href='editarRequisicao.php?id=" . htmlspecialchars($linha['idrequisicao']) . "'><img src='img/Icones/editar_A2.svg' alt='Consultar' class = 'icon'></a></td>"; // Link para alterar
+                                    echo "<td><a href='consultaRequisicao.php?idrequisicao=" . htmlspecialchars($linha['idrequisicao']) . "'><img src='img/Icones/eye2.svg' alt='Consultar' class = 'icon'></a></td>"; // Link para consulta
                                     echo "</tr>";
                                 }
                                 ?>

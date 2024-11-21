@@ -1,0 +1,187 @@
+/* Inclusão das fontes conforme o Guia de Estilo CPS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    margin: 0px;
+    height: 100vh; /* Altura total da viewport */
+    padding: 0;
+    background-color: #f8f8f8; /* Fundo suave */
+    color: #666666; /* Texto principal */
+}
+
+header {
+    flex-direction: row;
+    justify-content: center; /* Alinha verticalmente os itens ao centro */
+   
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    padding: 10px 0; /* Espaçamento interno */
+    background-color: #7E0000; /* Vermelho CPS para o cabeçalho */
+    color: #FFFFFF; /* Texto branco */
+    
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
+}
+
+/* DivA: duas subdivisões alinhadas lado a lado */
+.divA {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+}
+
+h2, h3 {
+    font-family: 'Roboto Slab', serif; /* Títulos */
+    margin: 0;
+}
+/* Estilos para as subdivisões e a divB */
+.subDiv1, .subDiv2 {
+
+    padding: 10px 20px;
+    
+}
+
+.subDiv2 img {
+    height: 3.7em; /* Ajuste esta altura conforme necessário para igualar ao h1 */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+/*-------- ESTILO DO CORPO --------*/
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    width: 90%; /* Largura da div principal */
+    width: fit-content; /* Largura dinâmica, ajustando ao conteúdo */
+    margin: 60px auto 0; /* Margem superior para não sobrepor o header */
+    background-color: #f8f8f8; /* Fundo branco da div principal */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
+}
+
+.divA1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    padding-bottom: 15px;
+}
+.subA1{
+    padding-left: 7px;
+    font-weight: bold;
+}
+.divB {
+    border: 1px solid #E6E6E6; /* Borda cinza */
+    padding: 10px;
+    border-radius: 4px;
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: column; /* Alinha "Novo Cadastro" e os botões em coluna */
+}
+.subB1{
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    flex-direction: row; /* Alinha "Novo Cadastro" e os botões em coluna */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+form{
+    width: 100%; /* Ajusta o formulário para ocupar 100% da largura de subB1 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0; /* Remove margens adicionais */
+    padding: 0; /* Remove preenchimentos adicionais */
+   
+}
+label{
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    padding-right: 10px; /* Espaço entre a label e o select */
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.5; /* Ajusta a altura da linha */
+}
+.sub-Forms1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza o select em relação à label */
+    padding: 5px;
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+textarea {
+    width: 100%; /* Ocupa toda a largura disponível dentro da div */
+    max-width: 100%; /* Impede que o textarea ultrapasse a largura da div */
+    height: 90px; /* Define uma altura fixa para o textarea */
+    resize: none; /* Remove a opção de redimensionar o textarea pelo usuário */
+    overflow-wrap: break-word; /* Quebra palavras longas */
+    word-wrap: break-word; /* Suporte para navegadores antigos */
+    white-space: pre-wrap; /* Mantém quebras de linha e espaços */
+    padding: 10px; /* Espaçamento interno para melhor visualização */
+    font-family: 'Roboto', sans-serif; /* Mesma fonte usada no restante */
+    font-size: 14px; /* Tamanho de fonte ajustado para melhor leitura */
+    border: 1px solid #E6E6E6; /* Borda sutil */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #ffffff; /* Fundo branco */
+}
+
+select {
+    width: 100%; /* Ajusta o select para ocupar toda a largura do contêiner */
+    max-width: 100%; /* Evita que o select ultrapasse a largura da div */
+    padding: 10px; /* Espaçamento interno para um visual mais espaçado */
+    font-family: 'Roboto', sans-serif; /* Mesma fonte usada na página */
+    font-size: 14px; /* Tamanho de fonte para melhor leitura */
+    color: #666666; /* Cor do texto */
+    background-color: #ffffff; /* Fundo branco para manter o padrão */
+    border: 1px solid #E6E6E6; /* Borda sutil, semelhante aos outros campos */
+    border-radius: 4px; /* Bordas arredondadas para suavizar */
+    appearance: none; /* Remove o estilo padrão do select no navegador */
+    -webkit-appearance: none; /* Suporte para WebKit */
+    -moz-appearance: none; /* Suporte para Mozilla */
+}
+
+.btn-voltar {
+    font-family: 'Roboto', sans-serif; /* Texto geral */
+    background: none;       /* Remove o fundo */
+    border: none;           /* Remove as bordas */
+    margin: 0;              /* Remove a margem */
+    padding: 0;             /* Remove o espaçamento interno */
+    font-size: 12px;        /* Ajuste o tamanho da fonte conforme necessário */
+    cursor: pointer;        /* Exibe o cursor de mão */
+    color: #7E0000;            /* Define a cor do texto */
+    border-bottom: 1px solid #7E0000; 
+    transition: color 0.3s; /* Suaviza a transição da cor */
+}
+.btn-atualizar {
+    padding: 4px 8px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #7E0000;
+    color: #FFFFFF;
+    border-style: solid;
+    border-width: thin;
+    border-color: #7E0000;
+}
+.btn-atualizar:hover {
+    background-color: #B20000;
+}
+h1{
+    font-family: 'Roboto Slab', serif; /* Títulos */ 
+}
